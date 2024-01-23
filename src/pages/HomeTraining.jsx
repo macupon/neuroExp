@@ -10,8 +10,9 @@ export default function HomeTraining() {
             <p className='mb-5 md:leading-7 md:ml-0  md:text-md lg:ml-0  lg:text-xl'>
                 If you have a child with special needs and you are a resident in Denmark, you can apply for a 
                 service through the Kommune which is called Hjemmetræning Programme. The Hometraining Program 
-                consists of a teamwork between professionals from different areas of development and families. 
-                The protagonists of the program are the parents where they seek to train different skills with 
+                consists of a teamwork between professionals from different areas of development and families.
+                <br/>
+                <b>The protagonists of the program are the parents</b> where they seek to train different skills with 
                 their child to improve their difficulties under the supervision of professionals such as Psychologist, 
                 Occupational Therapist, Speech and Language Pathologist.
             </p>

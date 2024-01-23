@@ -1,14 +1,14 @@
 import picOne from '../../public/neuro-img-1.webp'
-import neuroEXP from '../../public/neuroEXP.mp4'
+// import neuroEXP from '../../public/neuroEXP.mp4'
 
 export default function WhatWeDo() {
   return (
     <>
 
     <div className="flex flex-wrap p-8 md:items-center lg:items-center">
-      <div>
+      {/* <div>
         <video src={neuroEXP} controls autoPlay loop className='rounded-lg'></video>
-      </div>
+      </div> */}
       <div className='p-8 rounded-xl mt-8 flex justify-center  md:leading-10'>
         <h2 className='mt-20 mr-5 mr-16 md:mb-5 bg-sky-200 h-24 md:mt-5 md:w-24 lg:w-40 text-center font-bold lg:ml-12 text-2xl md:text-5xl lg:text-5xl'>WHAT WE DO</h2>
         <p className='mb-5 md:leading-7 md:ml-0  md:text-md lg:ml-12  lg:text-xl'>
