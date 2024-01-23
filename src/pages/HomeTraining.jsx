@@ -16,9 +16,11 @@ export default function HomeTraining() {
                 Occupational Therapist, Speech and Language Pathologist.
             </p>
             <p className='mb-5 md:leading-7 md:ml-0  md:text-md lg:ml-0  lg:text-xl'>
-                NeuroExp collaborates with:
-                Center for Neurodiversitet - CN: Arely Alvarado, cand. psych - arealv@neurodiversitet.net. 
-                Ludika Center: Paula Martinez, Specialized in the motor development and early stimulation.
+                <b>NeuroExp collaborates with:</b>
+                <br/>
+                Center for Neurodiversitet - CN: Arely Alvarado, cand. psych - arealv@neurodiversitet.net
+                <br/>
+                <u><a href="http://www.ludika.dk/en/about-ludika/behind-ludika/">Ludika Center</a></u>: Paula Martinez, Specialized in the motor development and early stimulation.
             </p>
         </div>
     </div>
