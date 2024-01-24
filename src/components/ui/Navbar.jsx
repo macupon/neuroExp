@@ -25,7 +25,7 @@ const openMenu =()=> {
                     <img src={navLogo} alt="logo" className="w-10" />
                 </div> 
                 <div className={
-                    menuOn  ? " flex absolute bg-orange-100 min-h-[30vh] items-center px-5 left-0  top-[9%] w-full md:bg-violet-100 md:static md:min-h-fit md:w-auto duration-500"
+                    menuOn  ? " flex absolute bg-orange-100 min-h-[35vh] items-center px-6 left-0  top-[12%] w-full md:bg-violet-100 md:static md:min-h-fit md:w-auto duration-500"
                             : "absolute  min-h-[60vh] left-0 top-[-100%] w-full flex md:static md:min-h-fit md:w-auto"}>
                     <ul className="flex bg-orange-100 flex-col md:items-center  md:flex-row  gap-8 md:gap-[4vw] md:bg-violet-100">
                         <li>
@@ -39,11 +39,13 @@ const openMenu =()=> {
                         </li>
                         <li className="group">
                             <Link to="/whatweoffer" className="hover:text-gray-500">What we Offer</Link>
-                            <ul className="absolute whitespace-nowrap top-[35px] p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-[80px] transition-all duration-300 bg-violet-100">
-                                <li className="w-auto p-2 bg-violet-100">
+                            <ul className="absolute whitespace-nowrap top-[55px] p-5 opacity-0 invisible group-hover:opacity-100 
+                            group-hover:visible  group-hover:top-[220px] md:group-hover:top-[80px] transition-all duration-300 bg-orange-100 
+                            md:bg-violet-100">
+                                <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100 text-wrap">
                                     <Link to="/speechandlanguage" >- Speech and Language Therapy</Link>
                                 </li>
-                                <li className="w-auto p-2 bg-violet-100">
+                                <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100">
                                     <Link to="/hometraining">- Home Training</Link>
                                 </li>
                             </ul>
