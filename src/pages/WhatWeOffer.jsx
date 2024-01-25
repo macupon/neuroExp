@@ -34,9 +34,9 @@ export default function WhatWeOffer() {
       <img src={babyblocks} alt="" className='m-2 rounded-xl lg:w-[100%] lg:h-[400px]'/>
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
-        <h2 className='my-2 font-bold md:ml-0 lg:ml-12 text-2xl lg:text-3xl'> Neurodevelopmental evaluation</h2>
+        <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Neurodevelopmental evaluation</h2>
         <div className='flex flex-col md:flex-row md:align-middle my-8'>
-          <img src={babybear} alt="" className='md:w-[20vw] md:h-[170px] md:mt-6 lg:w-auto lg:h-auto md:mt-0 rounded-lg'/>
+          <img src={babybear} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
             <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
               The evaluation process begins with an interview with the family about the child's development and 
               then the general and specific evaluations will be performed.
@@ -52,9 +52,9 @@ export default function WhatWeOffer() {
       </div>
       
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
-        <h2 className='my-2 font-bold md:ml-0 lg:ml-12 text-2xl lg:text-3xl'> Speech and Language Evaluation</h2>
+        <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Speech and Language Evaluation</h2>
         <div className='flex flex-col md:flex-row my-8'>
-          <img src={babydough} alt="" className='md:w-[20vw] md:h-[170px] md:mt-6 lg:w-auto lg:h-auto md:mt-0 rounded-lg'/>
+          <img src={babydough} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
             <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
               1. Admission interview: You will be given a questionnaire about the child's speech and language
               development to be completed. 
@@ -69,9 +69,9 @@ export default function WhatWeOffer() {
       </div>
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
-        <h2 className='my-2 font-bold md:ml-0 lg:ml-12 text-2xl lg:text-3xl'> Initial Consultation </h2>
+        <h2 className='my-2 font-bold md:ml-0  text-2xl lg:text-3xl'> Initial Consultation </h2>
         <div className='flex flex-col md:flex-row my-8'>
-          <img src={speechtep} alt="" className='md:w-[20vw] md:h-[170px] md:mt-6 lg:w-auto lg:h-auto md:mt-0 rounded-lg'/>
+          <img src={speechtep} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
             <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
               This service is for those families who are interested in a professional consultation and get suggestions 
               that can help with their child's speech and language development. 
@@ -90,9 +90,9 @@ export default function WhatWeOffer() {
       </div>
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
-        <h2 className='my-2 font-bold md:ml-0 lg:ml-12 text-2xl lg:text-3xl'> Language Therapy</h2>
+        <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Language Therapy</h2>
         <div className='flex flex-col md:flex-row my-8'>
-          <img src={speechterap} alt="" className='md:w-[20vw] md:h-[170px] md:mt-6 lg:w-auto lg:h-auto md:mt-0 rounded-lg'/>
+          <img src={speechterap} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
             <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
               TWe offer one hour session in which all aspects of communication through play will be explored. 
               It is important to emphasize that all sessions will be play based approach since there are many more 
