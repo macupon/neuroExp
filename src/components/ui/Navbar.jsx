@@ -3,19 +3,39 @@ import { Link } from "react-router-dom"
 import { IgIcon } from "./icons/IgIcon"
 import { MenuIcon } from "./icons/Menuicon"
 import { FbIcon } from './icons/FbIcon'
-import logo from '../../../public/exp-logo.png'
 import navLogo from '../../../public/nav-logo.png'
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 
 
 export const Navbar = () =>{
 const [menuOn, setMenuOn] = useState(false);
+let menuRef = useRef();
 
 const openMenu =()=> {
 // toggle boolean
     setMenuOn(!menuOn)
 }
+
+useEffect(()=>{
+    const handler = (e) => {
+        // Si el clic es dentro del menú, no hacemos nada
+        if(menuRef.current.contains(e.target)){
+            setTimeout(() => {
+                setMenuOn(false);
+            }, 100);
+            
+        }
+        // Si no, cerramos el menú
+        else {
+            setMenuOn(false);
+        }
+    };
+    document.addEventListener("mousedown", handler);
+    return() =>{
+        document.removeEventListener("mousedown", handler)
+    }
+},[]);
 
     return (
         <>
@@ -24,9 +44,9 @@ const openMenu =()=> {
                 <div>
                     <img src={navLogo} alt="logo" className="w-10" />
                 </div> 
-                <div className={
+                <div  className={
                     menuOn  ? " flex absolute bg-orange-100 min-h-[35vh] items-center px-6 left-0  top-[12%] w-full md:bg-violet-100 md:static md:min-h-fit md:w-auto duration-500"
-                            : "absolute  min-h-[60vh] left-0 top-[-100%] w-full flex md:static md:min-h-fit md:w-auto"}>
+                            : "absolute  min-h-[60vh] left-0 top-[-100%] w-full flex md:static md:min-h-fit md:w-auto"} ref={menuRef}>
                     <ul className="flex bg-orange-100 flex-col md:items-center  md:flex-row  gap-8 md:gap-[4vw] md:bg-violet-100">
                         <li>
                             <Link to="/" className="hover:text-gray-500">Home</Link>

@@ -33,7 +33,7 @@ export default function WhatWeOffer() {
 
       <img src={babyblocks} alt="" className='m-2 rounded-xl lg:w-[100%] lg:h-[400px]'/>
 
-      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
+      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
         <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Neurodevelopmental evaluation</h2>
         <div className='flex flex-col md:flex-row md:align-middle my-8'>
           <img src={babybear} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
@@ -51,7 +51,7 @@ export default function WhatWeOffer() {
         </div>
       </div>
       
-      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
+      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
         <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Speech and Language Evaluation</h2>
         <div className='flex flex-col md:flex-row my-8'>
           <img src={babydough} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
@@ -68,7 +68,7 @@ export default function WhatWeOffer() {
         </div>
       </div>
 
-      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
+      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
         <h2 className='my-2 font-bold md:ml-0  text-2xl lg:text-3xl'> Initial Consultation </h2>
         <div className='flex flex-col md:flex-row my-8'>
           <img src={speechtep} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
@@ -89,7 +89,7 @@ export default function WhatWeOffer() {
         </div>
       </div>
 
-      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8'>
+      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
         <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Language Therapy</h2>
         <div className='flex flex-col md:flex-row my-8'>
           <img src={speechterap} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
