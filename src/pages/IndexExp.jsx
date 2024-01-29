@@ -4,7 +4,7 @@ import { PlaneIcon } from 'lucide-react'
 import chatIcon from '../../public/chatIcon.png'
 import img1 from '../../public/indexImg1.webp'
 import img2 from '../../public/indexImg2.webp'
-
+import Map from '../components/ui/Map'
 
 
 export const IndexExp =()=> {
@@ -124,6 +124,10 @@ export const IndexExp =()=> {
                 </p>
             </div>
 
+        </div>
+
+        <div className='bg-white/50 rounded-xl shadow-md mx-5  my-8'>
+            <Map/>
         </div>
         </>
     )

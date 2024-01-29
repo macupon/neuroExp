@@ -17,25 +17,39 @@ const openMenu =()=> {
     setMenuOn(!menuOn)
 }
 
-useEffect(()=>{
-    const handler = (e) => {
-        // Si el clic es dentro del menú, no hacemos nada
-        if(menuRef.current.contains(e.target)){
-            setTimeout(() => {
-                setMenuOn(false);
-            }, 100);
+// useEffect(()=>{
+//     const handler = (e) => {
+//         // Si el clic es dentro del menú, no hacemos nada
+//         if(menuRef.current.contains(e.target)){
+//             setTimeout(() => {
+//                 setMenuOn(false);
+//             }, 100);
             
-        }
-        // Si no, cerramos el menú
-        else {
+//         }
+//         // Si no, cerramos el menú
+//         else {
+//             setMenuOn(false);
+//         }
+//     };
+//     document.addEventListener("mousedown", handler);
+//     return() =>{
+//         document.removeEventListener("mousedown", handler)
+//     }
+// },[]);
+useEffect(() => {
+    const handleOutsideClick = (e) => {
+        if (menuRef.current && !menuRef.current.contains(e.target)) {
             setMenuOn(false);
         }
     };
-    document.addEventListener("mousedown", handler);
-    return() =>{
-        document.removeEventListener("mousedown", handler)
-    }
-},[]);
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+        document.removeEventListener("mousedown", handleOutsideClick);
+    };
+}, []);
+
 
     return (
         <>

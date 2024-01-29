@@ -8,6 +8,7 @@ import WhatWeOffer from './pages/WhatWeOffer'
 import { Navbar } from "./components/ui/Navbar"
 import Speech from "./pages/Speech"
 import HomeTraining from "./pages/HomeTraining"
+import Footer from "./components/ui/Footer"
 
 
 
@@ -17,15 +18,16 @@ function App() {
     <>
 
     <Router>
-    <Navbar/>
-      <Routes>
-        <Route path='/' element={<IndexExp/>}/>
-        <Route path="/aboutus" element={<AboutUs/>}/>
-        <Route path="/whatwedo" element={<WhatWeDo/>}/>
-        <Route path="/whatweoffer" element={<WhatWeOffer/>}/>
-        <Route path="/speechandlanguage" element={<Speech/>}/>
-        <Route path="/hometraining" element={<HomeTraining/>}/>
-      </Routes>
+      <Navbar/>
+        <Routes>
+          <Route path='/' element={<IndexExp/>}/>
+          <Route path="/aboutus" element={<AboutUs/>}/>
+          <Route path="/whatwedo" element={<WhatWeDo/>}/>
+          <Route path="/whatweoffer" element={<WhatWeOffer/>}/>
+          <Route path="/speechandlanguage" element={<Speech/>}/>
+          <Route path="/hometraining" element={<HomeTraining/>}/>
+        </Routes>
+      <Footer/>
     </Router>
     </>
   )
