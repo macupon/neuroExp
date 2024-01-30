@@ -7,13 +7,13 @@ export default function AboutUs() {
 
         <div className='flex flex-col md:flex-row md:justify-center'>
 
-          <img src={florImg} alt="Florencia" className='md:w-1/2 md:mt-0 lg:w-auto rounded-lg ' />
+          <img src={florImg} alt="Florencia" className='md:w-3/6 md:h-[330px] md:mt-6 lg:mt-2 lg:h-auto md:mt-0 lg:w-auto rounded-lg' />
         
           <div className='md:w-1/2'>
             <h1 className='bg-sky-200 my-5 w-10 font-bold md:ml-8 lg:ml-12 text-3xl md:text-4xl lg:text-5xl'>Hello everyone!</h1>
             <p className='mb-5 p-2 leading-8 md:leading-8 lg:leading-10 md:ml-8 text-xl md:text-2xl text-4sm lg:text-3xl '>
-              <b>I'm Flor</b> and I'm a Speech and Language Therapist, founder of NeuroExp. On this page I will share with you a little bit about my 
-              story, my journey and my future projects. 
+              <b>I'm Flor</b> and I'm a Speech and Language Therapist, founder of NeuroExp. On this page I will share with you a little bit 
+              about my story, my journey and my future projects. 
               <br/> 
               <b>Follow me!</b>
             </p>
@@ -82,8 +82,10 @@ export default function AboutUs() {
             <b>
               Theoretical Foundations of Sensory Integration: From Theory to Identification - Erna Blanche.<br/>
               Inside Out - <a href="https://sensoryslp.mykajabi.com/"><u>Sensory Certificate Course for SLP</u></a>.<br/>
-              <a href="https://learnplaythrive.com/aac/"><u>Authentic AAC</u></a> - Implementing Communication Systems for Autonomy & Connection.<br/>
-              <a href="https://learnplaythrive.com/unmasc/"><u>Let’s UNMASC</u></a> - Understanding the Needs and Motivations of Autistic Social Communication. <br/>
+              <a href="https://learnplaythrive.com/aac/"><u>Authentic AAC</u></a> - Implementing Communication Systems for Autonomy & Connection.
+              <br/>
+              <a href="https://learnplaythrive.com/unmasc/"><u>Let’s UNMASC</u></a>- Understanding the Needs and Motivations of Autistic Social 
+              Communication.<br/>
             </b>
           </p>
         </div>

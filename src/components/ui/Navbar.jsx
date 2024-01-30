@@ -71,11 +71,10 @@ useEffect(() => {
                         <li>
                             <Link to="/whatwedo" className="hover:text-gray-500">What we Do</Link>
                         </li>
-                        <li className="group">
-                            <Link to="/whatweoffer" className="hover:text-gray-500">What we Offer</Link>
+                        <li className="group hover:text-gray-500">What we Offer
                             <ul className="absolute whitespace-nowrap top-[55px] p-5 opacity-0 invisible group-hover:opacity-100 
-                            group-hover:visible  group-hover:top-[220px] md:group-hover:top-[80px] transition-all duration-300 bg-orange-100 
-                            md:bg-violet-100">
+                                        group-hover:visible  group-hover:top-[220px] md:group-hover:top-[80px] transition-all duration-300 bg-orange-100 
+                                        md:bg-violet-100">
                                 <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100 text-wrap">
                                     <Link to="/speechandlanguage" >- Speech and Language Therapy</Link>
                                 </li>
