@@ -21,6 +21,7 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif'],
         },
       colors: {
+        'purple': '#3b0764',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -29,7 +30,6 @@ module.exports = {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-                'orange': 'rgb(254 202 202)',
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",

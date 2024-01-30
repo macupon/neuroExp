@@ -10,14 +10,14 @@ import Map from '../components/ui/Map'
 export const IndexExp =()=> {
     return (
         <>
-        <div className='flex h-48 justify-evenly content-center bg-violet-50'>
+        <div className='flex h-48 lg:h-80 justify-evenly content-center bg-violet-50'>
 
             <img src={logo} className='sm:h-auto md:h-auto' alt="logo"/>
 
         </div>
 
         <div className='flex flex-row justify-center text-center pt-16 mb-4'>
-            <h2 className='text-nowrap font-bold  mb-6 md:mb-5 md:mt-0  text-4xl md:text-5xl lg:text-6xl'>What we Do</h2>
+            <h2 className='text-nowrap text-purple font-bold  mb-6 md:mb-5 md:mt-0  text-3xl md:text-4xl lg:text-5xl'>Child-led Play Therapy</h2>
         </div>
 
         <div className='flex flex-col lg:flex-row  lg:max-w-8xl mx-5 gap-8  group'>
@@ -60,30 +60,31 @@ export const IndexExp =()=> {
         </div>
 
         <div className='text-center pt-16 mb-4'>
-            <h2 className='text-nowrap font-bold  mb-6 md:mb-5 md:mt-0  text-4xl md:text-5xl lg:text-6xl'>Our Services</h2>
+            <h2 className='text-nowrap font-bold text-purple mb-6 md:mb-5 md:mt-0  text-4xl md:text-5xl lg:text-6xl'>Our Services</h2>
         </div>
 
         <div className='flex flex-col md:justify-evenly md:align-middle my-5 gap-4 md:gap-2 md:mx-0 md:flex-row group '>
 
-            <div className='flex flex-col md:flex-row justify-center items-center bg-white/50 p-8 rounded-full h-[100px] mx-4 md:mx-0 md:h-[150px] md:w-[150px] lg:w-[190px] lg:h-[190px] border-2 border-indigo-200 shadow-sm shadow-indigo-500/50'>
+            <div className='flex flex-col md:flex-row justify-center items-center bg-white/50 p-8 rounded-full h-[80px] mx-4 md:mx-0 md:h-[150px] md:w-[150px] lg:w-[190px] lg:h-[190px] border-2 border-indigo-200 shadow-sm shadow-indigo-500/50'>
                 <h3 className='text-md font-bold text-center'>LANGUAGE THERAPY</h3>
             </div>
 
             <img src={img1} alt="" className='invisible hidden md:block md:visible object-cover  w-[150px] h-[150px] lg:w-[190px] lg:h-[190px] rounded-full'/>
 
-            <div className='flex justify-center items-center bg-white/50 p-8 rounded-full h-[100px] mx-4 md:mx-0 my-0 md:my-0 md:w-[150px] md:h-[150px] lg:w-[190px] lg:h-[190px] border-2 border-indigo-200 shadow-sm shadow-indigo-500/50'>
+            <div className='flex justify-center items-center bg-white/50 p-8 rounded-full h-[80px] mx-4 md:mx-0 my-0 md:my-0 md:w-[150px] md:h-[150px] lg:w-[190px] lg:h-[190px] border-2 border-indigo-200 shadow-sm shadow-indigo-500/50'>
                 <h3 className=' text-md font-bold text-center '>ASSESSMENT TO PARENTS</h3>
             </div>
 
             <img src={img2} alt="" className='invisible hidden md:block md:visible object-cover w-[150px] h-[150px] lg:w-[190px] lg:h-[190px] rounded-full' />
             
-            <div className='flex justify-center items-center bg-white/50 p-8 rounded-full h-[100px] mx-4 md:mx-0 my-0 md:my-0 md:w-[150px] md:h-[150px] lg:w-[190px] lg:h-[190px] border-2 border-indigo-200 shadow-sm shadow-indigo-500/50'>
+            <div className='flex justify-center items-center bg-white/50 p-8 rounded-full h-[80px] mx-4 md:mx-0 my-0 md:my-0 md:w-[150px] md:h-[150px] lg:w-[190px] lg:h-[190px] border-2 border-indigo-200 shadow-sm shadow-indigo-500/50'>
                 <h3 className='text-md font-bold text-center'>THERAPEUTIC MATERIAL DESIGN</h3>
             </div>
 
         </div>
+
         <div className='text-center pt-16 mb-4'>
-            <h2 className='text-nowrap font-bold  mb-6 md:mb-5 md:mt-0  text-4xl md:text-5xl lg:text-6xl'>What people say</h2>
+            <h2 className='text-nowrap font-bold text-purple  mb-6 md:mb-5 md:mt-0  text-4xl md:text-5xl lg:text-6xl'>What people say</h2>
         </div>
 
         <div className='flex flex-col lg:flex-row  lg:max-w-8xl mx-5 gap-8  group'>

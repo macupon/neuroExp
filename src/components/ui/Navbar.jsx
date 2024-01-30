@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { IgIcon } from "./icons/IgIcon"
 import { MenuIcon } from "./icons/Menuicon"
 import { FbIcon } from './icons/FbIcon'
+import { LinkIcon } from "./icons/LinkIcon"
 import navLogo from '../../../public/nav-logo.png'
 import { useState, useEffect, useRef } from "react"
 
@@ -71,7 +72,7 @@ useEffect(() => {
                         <li>
                             <Link to="/whatwedo" className="hover:text-gray-500">What we Do</Link>
                         </li>
-                        <li className="group hover:text-gray-500">What we Offer
+                        <li className=" hover:text-gray-500 group ">What we Offer
                             <ul className="absolute whitespace-nowrap top-[55px] p-5 opacity-0 invisible group-hover:opacity-100 
                                         group-hover:visible  group-hover:top-[220px] md:group-hover:top-[80px] transition-all duration-300 bg-orange-100 
                                         md:bg-violet-100">
@@ -86,7 +87,8 @@ useEffect(() => {
                     </ul>
                 </div>
                 <div className="flex items-center gap-6">
-                    <div className="flex py-2">
+                    <div className="flex">
+                        <LinkIcon/>
                         <IgIcon/>
                         <FbIcon/>
                     </div>
