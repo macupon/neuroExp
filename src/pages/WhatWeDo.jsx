@@ -8,7 +8,7 @@ export default function WhatWeDo() {
     <div className="flex flex-wrap p-6 md:p-8 md:items-center justify-center">
       
       <div>
-        <video src={neuroEXP} controls autoPlay loop className='rounded-lg h-64 md:h-80 lg:h-96'></video>
+        <video src={neuroEXP} controls loop className='rounded-lg h-64 md:h-80 lg:h-96'></video>
       </div>
 
       <div className='flex flex-col md:flex-row p-4 md:p-8 rounded-xl justify-between  md:leading-10'>
