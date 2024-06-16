@@ -35,46 +35,57 @@ export default function WhatWeOffer() {
       <img src={babyblocks} alt="" className='m-2 rounded-xl lg:w-[100%] lg:h-[400px]'/>
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
-        <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Neurodevelopmental evaluation</h2>
-        <div className='flex flex-col md:flex-row md:align-middle my-8'>
-          <img src={babybear} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
-            <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
-              The evaluation process begins with an interview with the family about the child's development and 
+        <div className='flex flex-col md:flex-row items-top'>
+          <img src={babybear} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg'/>
+          <div className="md:ml-10">
+            <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
+            Neurodevelopmental evaluation
+            </h2>
+            <p className='md:mt-5 leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700'>
+            The evaluation process begins with an interview with the family about the child's development and 
               then the general and specific evaluations will be performed. <br/>
               1. <b>Admission interview:</b> You will get a questionnaire on the child's neurodevelopment to be completed.
               If needed, I'll be able to deepen specific aspects that are of interest for the diagnosis. <br/>
               2. <b>Evaluation:</b> The child will be evaluated during a one-hour session in the office. <br/>
               Reports are not included in the price of the evaluation. Reports will be charged as an hourly session.
             </p>
+          </div>
         </div>
         <div className='flex justify-end mr-10'>
-          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[110px] h-[60px]'>1500 Dkk</button>
-        </div>
-      </div>
-      
-      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
-        <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Speech and Language Evaluation</h2>
-        <div className='flex flex-col md:flex-row my-8'>
-          <img src={babydough} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
-            <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
-            <br/>1. <b>Admission interview:</b> You will be given a questionnaire about the child's speech and language
-              development to be completed. <br/>
-              2. <b>Evaluation:</b> I will evaluate taking into account the chronological age of the child. There will be 
-              considered all aspects related to communication (neurolinguistic, articulatory, respiratory and phonatory). <br/>
-              Reports are not included in the price of the evaluation. Reports will be charged as an hourly session.
-            </p>
-        </div>
-        <div className='flex justify-end mr-10'>
-          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[110px] h-[60px]'>1500 Dkk</button>
+          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px]'>1500 Dkk</button>
         </div>
       </div>
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
-        <h2 className='my-2 font-bold md:ml-0  text-2xl lg:text-3xl'> Initial Consultation </h2>
-        <div className='flex flex-col md:flex-row my-8'>
-          <img src={speechtep} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
-            <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
-              This service is for those families who are interested in a professional consultation and get suggestions 
+        <div className='flex flex-col md:flex-row items-top'>
+          <img src={babydough} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg'/>
+          <div className="md:ml-10">
+            <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
+            Speech and Language Evaluation
+            </h2>
+            <p className='md:mt-5 leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700'>
+            1. <b>Admission interview:</b> You will be given a questionnaire about the child's speech and language
+            development to be completed. <br/>
+            2. <b>Evaluation:</b> I will evaluate taking into account the chronological age of the child. There will be 
+            considered all aspects related to communication (neurolinguistic, articulatory, respiratory and phonatory). <br/>
+            Reports are not included in the price of the evaluation. Reports will be charged as an hourly session.
+            </p>
+          </div>
+        </div>
+        <div className='flex justify-end mr-10'>
+          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px]'>1500 Dkk</button>
+        </div>
+      </div>
+
+      <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
+        <div className='flex flex-col md:flex-row items-top'>
+          <img src={speechtep} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg'/>
+          <div className="md:ml-10">
+            <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
+            Initial Consultation
+            </h2>
+            <p className='md:mt-5 leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700'>
+            This service is for those families who are interested in a professional consultation and get suggestions 
               that can help with their child's speech and language development. <br/>
               This service includes: <br/> 
               - Initial phone call for 20 minutes: where the case is superficially disclosed. <br/>
@@ -84,29 +95,35 @@ export default function WhatWeOffer() {
               - Personalized handbook with guidelines and activities that parents can carry out at home to promote 
               the child's linguistic development.
             </p>
+          </div>
         </div>
         <div className='flex justify-end mr-10'>
-          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[110px] h-[60px]'>1000 Dkk</button>
+          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px]'>1000 Dkk</button>
         </div>
       </div>
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
-        <h2 className='my-2 font-bold md:ml-0 text-2xl lg:text-3xl'> Language Therapy</h2>
-        <div className='flex flex-col md:flex-row my-8'>
-          <img src={speechterap} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[30vw] lg:h-[200px] md:mt-2 rounded-lg'/>
-            <p className='my-5 md:my-0 leading-7 md:leading-6 lg:leading-10 md:ml-6 md:text-base lg:text-xl'>
+        <div className='flex flex-col md:flex-row items-top'>
+          <img src={speechterap} alt="" className='md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg'/>
+          <div className="md:ml-10">
+            <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
+            Language Therapy
+            </h2>
+            <p className='md:mt-5 leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700'>
             We offer one hour session in which all aspects of communication through play will be explored. At the end of the session, 
             parents will be advised on how to continue with the activities at home, trying to generalize all the learning in the different 
             environments where the child develops. <br/>
             The hourly session rates vary between 650 Dkk and 850 Dkk, depending on what you are looking for and what needs to be included for 
             the therapy to be effective. Write to us privately detailing what you are looking for and we will send you a tailored budget!
             </p>
+          </div>
         </div>
         <div className='flex justify-end mr-10'>
-          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[110px] h-[60px]'>Contact Us</button>
+          <button className='mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px]'>Contact Us</button>
         </div>
       </div>
-        <div className='bg-white/50 p-4 md:p-8 mt-8 rounded-xl w-[100%]'>
+
+      <div className='bg-white/50 p-4 md:p-8 mt-8 rounded-xl w-[100%]'>
         <ProfileForm/>
       </div>
     </div>

@@ -11,11 +11,11 @@ export default function WhatWeDo() {
         <video src={neuroEXP} controls autoPlay loop className='rounded-lg h-64 md:h-80 lg:h-96'></video>
       </div>
 
-      <div className='flex flex-col md:flex-row p-4 md:p-8 rounded-xl  flex justify-center  md:leading-10'>
+      <div className='flex flex-col md:flex-row p-4 md:p-8 rounded-xl justify-between  md:leading-10'>
 
         <h1 className='bg-sky-200 text-left font-bold w-10  md:h-24 md:mr-16  mb-6 md:mb-5   
-                      md:mt-0 md:w-24 lg:ml-12 text-4xl md:text-5xl lg:text-6xl'>WHAT WE DO</h1>
-        <p className='mb-5 leading-7 md:leading-8 lg:leading-10 md:ml-10 lg:ml-12 md:text-base lg:text-xl'>
+                      md:mt-0 md:w-24 lg:ml-12 text-4xl md:text-5xl lg:text-6xl'>OUR PATIENTS</h1>
+        <p className='mb-5 leading-7 md:leading-8 lg:leading-10 md:ml-10 lg:ml-32 md:text-base lg:text-xl'>
           <b>Early Stimulation</b> or Early Intervention consists of providing the baby and the child with the best 
           opportunities for physical, intellectual and social development so that their abilities and skills find 
           their greatest potential in an environment full of stimuli.<br/>
