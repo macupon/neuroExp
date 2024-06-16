@@ -70,7 +70,10 @@ useEffect(() => {
                             <Link to="/aboutus" className="hover:text-gray-500">Meet our team</Link>
                         </li>
                         <li>
-                            <Link to="/whatwedo" className="hover:text-gray-500">What we Do</Link>
+                            <Link to="/whatwedo" className="hover:text-gray-500">Our patients</Link>
+                        </li>
+                        <li>
+                            <Link to="/ourapproach" className="hover:text-gray-500">Our approach</Link>
                         </li>
                         <li className=" hover:text-gray-500 group ">What we Offer
                             <ul className="absolute whitespace-nowrap top-[55px] p-5 opacity-0 invisible group-hover:opacity-100 
