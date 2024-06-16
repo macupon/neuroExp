@@ -54,7 +54,7 @@ useEffect(() => {
 
     return (
         <>
-        <header className="bg-violet-100">
+        <header className="bg-violet-100 md:sticky md:top-0">
             <nav className="flex justify-between items-center w-[92%] mx-auto h-20 ">
                 <div>
                     <img src={navLogo} alt="logo" className="w-10" />
@@ -67,7 +67,7 @@ useEffect(() => {
                             <Link to="/" className="hover:text-gray-500">Home</Link>
                         </li>
                         <li>
-                            <Link to="/aboutus" className="hover:text-gray-500">About Us</Link>
+                            <Link to="/aboutus" className="hover:text-gray-500">Meet our team</Link>
                         </li>
                         <li>
                             <Link to="/whatwedo" className="hover:text-gray-500">What we Do</Link>
