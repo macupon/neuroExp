@@ -70,10 +70,12 @@ export function ProfileForm() {
 
   return (
     <>
-      <Form {...form} netlify>
+      <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col space-y-8"
+          // eslint-disable-next-line react/no-unknown-property
+          netlify
         >
           <FormField
             control={form.control}

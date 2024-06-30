@@ -5,7 +5,7 @@ import speechtep from '../../public/cover2_files/speechtep.webp'
 import babydough from '../../public/cover2_files/babydough.webp'
 import speechterap from '../../public/cover2_files/speechterap.webp'
 
-import { ProfileForm } from '../components/demo/ProfileForm'
+
 
 
 export default function WhatWeOffer() {
@@ -121,10 +121,6 @@ export default function WhatWeOffer() {
         <div className='flex justify-end mr-10'>
           <button className='mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px]'>Contact Us</button>
         </div>
-      </div>
-
-      <div className='bg-white/50 p-4 md:p-8 mt-8 rounded-xl w-[100%]'>
-        <ProfileForm/>
       </div>
     </div>
   </>
