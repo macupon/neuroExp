@@ -9,12 +9,15 @@ import { useState, useEffect, useRef } from "react";
 export const Navbar = () => {
   const [menuOn, setMenuOn] = useState(false);
   let menuRef = useRef();
+  let refBurguer = useRef();
 
   const openMenu = () => {
     // toggle boolean
-    setMenuOn(!menuOn);
+    setMenuOn((prevState) => !prevState);
   };
-
+  useEffect(() => {
+    console.log("MenuOn state changed:", menuOn);
+  }, [menuOn]);
   // useEffect(()=>{
   //     const handler = (e) => {
   //         // Si el clic es dentro del menú, no hacemos nada
@@ -36,7 +39,10 @@ export const Navbar = () => {
   // },[]);
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
+      console.log(menuRef.current);
+      const clickMenu = menuRef.current.contains(e.target);
+      const clickBMenu = refBurguer.current.contains(e.target);
+      if (menuRef.current && !clickMenu && !clickBMenu) {
         setMenuOn(false);
       }
     };
@@ -58,8 +64,8 @@ export const Navbar = () => {
           <div
             className={
               menuOn
-                ? " flex absolute bg-orange-100 min-h-[35vh] items-center px-6 left-0  top-[12%] w-full md:bg-violet-100 md:static md:min-h-fit md:w-auto duration-500"
-                : "absolute  min-h-[60vh] left-0 top-[-100%] w-full flex md:static md:min-h-fit md:w-auto"
+                ? "flex absolute bg-orange-100 min-h-[35vh] items-center px-6 left-0  top-[10%] w-full md:bg-violet-100 md:static md:min-h-fit md:w-auto duration-500"
+                : "absolute min-h-[60vh] left-0 top-[-100%] w-full flex md:static md:min-h-fit md:w-auto"
             }
             ref={menuRef}
           >
@@ -85,7 +91,7 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className=" hover:text-gray-500 group ">
-                What we Offer
+                Services
                 <ul
                   className="absolute whitespace-nowrap top-[55px] p-5 opacity-0 invisible group-hover:opacity-100 
                                         group-hover:visible  group-hover:top-[220px] md:group-hover:top-[80px] transition-all duration-300 bg-orange-100 
@@ -93,11 +99,11 @@ export const Navbar = () => {
                 >
                   <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100 text-wrap">
                     <Link to="/speechandlanguage">
-                      - Speech and Language Therapy
+                      Speech and Language Therapy
                     </Link>
                   </li>
                   <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100">
-                    <Link to="/hometraining">- Home Training</Link>
+                    <Link to="/hometraining">Home Training</Link>
                   </li>
                 </ul>
               </li>
@@ -114,7 +120,7 @@ export const Navbar = () => {
               <IgIcon />
               <FbIcon />
             </div>
-            <div className="md:hidden">
+            <div ref={refBurguer} className="md:hidden">
               {/* paso al componente hijo la funcion que quiero que se ejecute*/}
               <MenuIcon handleClick={openMenu} />
             </div>

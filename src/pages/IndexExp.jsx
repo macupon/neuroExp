@@ -19,7 +19,7 @@ export const IndexExp =()=> {
             </div>
 
             <div className='flex flex-row justify-center text-center pt-16 mb-4'>
-                <h2 className='text-nowrap text-purple font-bold  mb-6 md:mb-5 md:mt-0  text-3xl md:text-4xl lg:text-5xl'>Child-led Play Therapy</h2>
+                <h2 className='text-nowrap text-purple font-bold  mb-6 md:mb-5 md:mt-0  text-2xl md:text-5xl'>Child-led Play Therapy</h2>
             </div>
 
             <div className='flex flex-col lg:flex-row  lg:max-w-8xl mx-5 gap-8  group'>
