@@ -59,7 +59,7 @@ export default function Forms() {
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         name="contact"
         data-netlify="true"
-        netlifly
+        netlify
       >
         <div className="sm:flex">
           <div className="mb-4">
