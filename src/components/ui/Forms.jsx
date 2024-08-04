@@ -58,9 +58,8 @@ export default function Forms() {
         method="post"
         name="contact v1"
         // data-netlify="true"
-        // onSubmit="submit"
+        onSubmit="submit"
         action="/"
-        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
@@ -283,6 +282,7 @@ export default function Forms() {
         <button
           type="submit"
           //   onClick={notify}
+          onClick={handleSubmit}
           className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
         >
           Submit
