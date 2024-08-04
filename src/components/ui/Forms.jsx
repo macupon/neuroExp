@@ -58,9 +58,8 @@ export default function Forms() {
         method="post"
         name="contact v1"
         // data-netlify="true"
-        // onSubmit="submit"
-        // action="/"
-        netlify
+        onSubmit="submit"
+        action="/"
       >
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
