@@ -14,7 +14,7 @@ export default function Forms() {
   const primaryLanguageRef = useRef();
   const bioRef = useRef();
 
-  const notify = () => toast("Form submitted successfully!");
+  //   const notify = () => toast("Form submitted successfully!");
 
   // Handle form submission
   //   const handleSubmit = (event) => {
@@ -56,10 +56,12 @@ export default function Forms() {
       <form
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         method="post"
-        name="contact"
+        name="contact v1"
+        data-netlify="true"
+        onSubmit="submit"
         // action="/"
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
           <div className="mb-4">
             <label
@@ -279,7 +281,7 @@ export default function Forms() {
 
         <button
           type="submit"
-          onClick={notify}
+          //   onClick={notify}
           //   onSubmit={handleSubmit}
           className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
         >
