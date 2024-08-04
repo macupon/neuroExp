@@ -72,6 +72,7 @@ export default function Forms() {
             <input
               type="text"
               id="userName"
+              name="name"
               ref={userNameRef}
               className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
             />
@@ -88,6 +89,7 @@ export default function Forms() {
               type="email"
               id="email"
               ref={emailRef}
+              name="email"
               className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -104,6 +106,7 @@ export default function Forms() {
             type="tel"
             id="phoneNumber"
             ref={phoneNumberRef}
+            name="phone"
             className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
           />
         </div>
@@ -111,7 +114,7 @@ export default function Forms() {
         {/* Radio Button Group for Service Type */}
         <div className="sm:flex md:space-x-48 mt-12">
           <div ref={serviceTypeRef} className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
+            <label name="service[]" className="block text-gray-700 font-bold mb-2">
               What service are you interested in?
             </label>
             <div className="flex flex-col space-y-2">
@@ -156,7 +159,7 @@ export default function Forms() {
 
           {/* Radio Button Group for Primary Language */}
           <div ref={primaryLanguageRef} className="mb-4">
-            <label className="block text-gray-700 font-bold mb-2">
+            <label name="language[]" className="block text-gray-700 font-bold mb-2">
               What is your child's primary language?
             </label>
             <div className="flex flex-col space-y-2">
@@ -201,7 +204,7 @@ export default function Forms() {
         </div>
 
         {/* Radio Button Group for Child's Age */}
-        <div ref={childAgeRef} className="mb-4">
+        <div name="age[]" ref={childAgeRef} className="mb-4">
           <label className="block text-gray-700 font-bold mb-2">
             How old is your child?
           </label>
@@ -262,6 +265,7 @@ export default function Forms() {
           <textarea
             id="bio"
             ref={bioRef}
+            name="message"
             placeholder="Tell us a little bit about yourself"
             className="w-full px-3 py-2 border rounded shadow resize-none focus:outline-none focus:shadow-outline"
             rows="4"
