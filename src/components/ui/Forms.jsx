@@ -54,13 +54,12 @@ export default function Forms() {
   return (
     <div>
       <form
-        // method="POST"
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
+        method="POST"
         name="contact"
-        // data-netlify="true"
-        netlify
+        action="/contact"
       >
-        <input type="hidden" name="form-name" value="contact"/>
+        <input type="hidden" name="form-name" value="contact" />
         <div className="sm:flex">
           <div className="mb-4">
             <label
