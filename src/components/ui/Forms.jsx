@@ -57,8 +57,8 @@ export default function Forms() {
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         method="post"
         name="contact v1"
-        data-netlify="true"
-        onSubmit="submit"
+        // data-netlify="true"
+        // onSubmit="submit"
         // action="/"
       >
         <input type="hidden" name="form-name" value="contact v1" />
