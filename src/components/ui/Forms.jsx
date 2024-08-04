@@ -59,7 +59,7 @@ export default function Forms() {
         name="contact v1"
         // data-netlify="true"
         onSubmit={handleSubmit} 
-        action="src/pages/ContactUs.jsx"
+        action="/pages/ContactUs"
       >
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
