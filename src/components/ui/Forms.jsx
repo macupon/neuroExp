@@ -16,40 +16,40 @@ export default function Forms() {
 
   //   const notify = () => toast("Form submitted successfully!");
 
-  // Handle form submission
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault(); // Prevent the default form submission behavior
+  //   Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
 
-  //     // Access the value of the input using the ref
-  //     const userName = userNameRef.current.value;
-  //     const email = emailRef.current.value;
-  //     const phoneNumber = phoneNumberRef.current.value;
-  //     const serviceType = serviceTypeRef.current.querySelector(
-  //       'input[name="serviceType"]:checked'
-  //     ).value;
-  //     const childAge = childAgeRef.current.querySelector(
-  //       'input[name="childAge"]:checked'
-  //     ).value;
-  //     const primaryLanguage = primaryLanguageRef.current.querySelector(
-  //       'input[name="primaryLanguage"]:checked'
-  //     ).value;
-  //     const bio = bioRef.current.value;
+    // Access the value of the input using the ref
+    const userName = userNameRef.current.value;
+    const email = emailRef.current.value;
+    const phoneNumber = phoneNumberRef.current.value;
+    const serviceType = serviceTypeRef.current.querySelector(
+      'input[name="serviceType"]:checked'
+    ).value;
+    const childAge = childAgeRef.current.querySelector(
+      'input[name="childAge"]:checked'
+    ).value;
+    const primaryLanguage = primaryLanguageRef.current.querySelector(
+      'input[name="primaryLanguage"]:checked'
+    ).value;
+    const bio = bioRef.current.value;
 
-  //     // Do something with the form data
-  //     console.log("Form submitted with:", {
-  //       userName,
-  //       email,
-  //       phoneNumber,
-  //       serviceType,
-  //       childAge,
-  //       primaryLanguage,
-  //       bio,
-  //     });
-  //     // toast.success("Form submitted successfully!", {
-  //     //   position: toast.POSITION.TOP_RIGHT,
-  //     //   autoClose: 3000, // 3 seconds
-  //     // });
-  //   };
+    // Do something with the form data
+    console.log("Form submitted with:", {
+      userName,
+      email,
+      phoneNumber,
+      serviceType,
+      childAge,
+      primaryLanguage,
+      bio,
+    });
+    // toast.success("Form submitted successfully!", {
+    //   position: toast.POSITION.TOP_RIGHT,
+    //   autoClose: 3000, // 3 seconds
+    // });
+  };
 
   return (
     <div>
@@ -58,8 +58,9 @@ export default function Forms() {
         method="post"
         name="contact v1"
         // data-netlify="true"
-        onSubmit="submit"
+        // onSubmit="submit"
         action="/"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
@@ -282,7 +283,6 @@ export default function Forms() {
         <button
           type="submit"
           //   onClick={notify}
-          //   onSubmit={handleSubmit}
           className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
         >
           Submit
