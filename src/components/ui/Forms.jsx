@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-undef */
 import { useRef } from "react";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Forms() {
@@ -60,6 +60,7 @@ export default function Forms() {
         // data-netlify="true"
         // onSubmit="submit"
         // action="/"
+        netlify
       >
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
@@ -288,7 +289,7 @@ export default function Forms() {
           Submit
         </button>
       </form>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 }
