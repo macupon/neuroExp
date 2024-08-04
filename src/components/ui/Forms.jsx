@@ -58,7 +58,7 @@ export default function Forms() {
         onSubmit={handleSubmit}
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         name="contact"
-        data-netlify="true"
+        // data-netlify="true"
         netlify
       >
         <div className="sm:flex">
