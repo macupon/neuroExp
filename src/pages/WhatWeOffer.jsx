@@ -75,7 +75,7 @@ export default function WhatWeOffer() {
             <img
               src={babybear}
               alt=""
-              className="md:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg"
+              className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
             <div className="md:ml-10">
               <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
@@ -117,7 +117,7 @@ export default function WhatWeOffer() {
             <img
               src={babydough}
               alt=""
-              className="md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg"
+              className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
             <div className="md:ml-10">
               <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
@@ -155,7 +155,7 @@ export default function WhatWeOffer() {
             <img
               src={speechtep}
               alt=""
-              className="md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg"
+              className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
             <div className="md:ml-10">
               <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
@@ -205,7 +205,7 @@ export default function WhatWeOffer() {
             <img
               src={speechterap}
               alt=""
-              className="md:w-[20vw] md:h-[150px] lg:w-[28vw] lg:h-[200px] md:mt-2 rounded-lg"
+              className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
             <div className="mt-4 md:mt-0 md:ml-10">
               <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
@@ -218,7 +218,7 @@ export default function WhatWeOffer() {
                 at home, trying to generalize all the learning in the different
                 environments where the child develops.
               </p>
-              <p className="mt-4 md:w-3/4">
+              <p className="mt-4 md:w-3/4 text-gray-700">
                 The hourly session rates vary between 650 Dkk and 850 Dkk,
                 depending on what you are looking for and what needs to be
                 included for the therapy to be effective. Write to us privately
