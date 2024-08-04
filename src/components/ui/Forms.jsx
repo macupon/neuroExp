@@ -14,49 +14,47 @@ export default function Forms() {
   const primaryLanguageRef = useRef();
   const bioRef = useRef();
 
-  
   const notify = () => toast("Form submitted successfully!");
 
   // Handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+  //   const handleSubmit = (event) => {
+  //     event.preventDefault(); // Prevent the default form submission behavior
 
-    // Access the value of the input using the ref
-    const userName = userNameRef.current.value;
-    const email = emailRef.current.value;
-    const phoneNumber = phoneNumberRef.current.value;
-    const serviceType = serviceTypeRef.current.querySelector(
-      'input[name="serviceType"]:checked'
-    ).value;
-    const childAge = childAgeRef.current.querySelector(
-      'input[name="childAge"]:checked'
-    ).value;
-    const primaryLanguage = primaryLanguageRef.current.querySelector(
-      'input[name="primaryLanguage"]:checked'
-    ).value;
-    const bio = bioRef.current.value;
+  //     // Access the value of the input using the ref
+  //     const userName = userNameRef.current.value;
+  //     const email = emailRef.current.value;
+  //     const phoneNumber = phoneNumberRef.current.value;
+  //     const serviceType = serviceTypeRef.current.querySelector(
+  //       'input[name="serviceType"]:checked'
+  //     ).value;
+  //     const childAge = childAgeRef.current.querySelector(
+  //       'input[name="childAge"]:checked'
+  //     ).value;
+  //     const primaryLanguage = primaryLanguageRef.current.querySelector(
+  //       'input[name="primaryLanguage"]:checked'
+  //     ).value;
+  //     const bio = bioRef.current.value;
 
-    // Do something with the form data
-    console.log("Form submitted with:", {
-      userName,
-      email,
-      phoneNumber,
-      serviceType,
-      childAge,
-      primaryLanguage,
-      bio,
-    });
-    // toast.success("Form submitted successfully!", {
-    //   position: toast.POSITION.TOP_RIGHT,
-    //   autoClose: 3000, // 3 seconds
-    // });
-  };
+  //     // Do something with the form data
+  //     console.log("Form submitted with:", {
+  //       userName,
+  //       email,
+  //       phoneNumber,
+  //       serviceType,
+  //       childAge,
+  //       primaryLanguage,
+  //       bio,
+  //     });
+  //     // toast.success("Form submitted successfully!", {
+  //     //   position: toast.POSITION.TOP_RIGHT,
+  //     //   autoClose: 3000, // 3 seconds
+  //     // });
+  //   };
 
   return (
     <div>
       <form
         method="POST"
-        onSubmit={handleSubmit}
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         name="contact"
         data-netlify="true"
@@ -115,7 +113,10 @@ export default function Forms() {
         {/* Radio Button Group for Service Type */}
         <div className="sm:flex md:space-x-48 mt-12">
           <div ref={serviceTypeRef} className="mb-4">
-            <label name="service[]" className="block text-gray-700 font-bold mb-2">
+            <label
+              name="service[]"
+              className="block text-gray-700 font-bold mb-2"
+            >
               What service are you interested in?
             </label>
             <div className="flex flex-col space-y-2">
@@ -160,7 +161,10 @@ export default function Forms() {
 
           {/* Radio Button Group for Primary Language */}
           <div ref={primaryLanguageRef} className="mb-4">
-            <label name="language[]" className="block text-gray-700 font-bold mb-2">
+            <label
+              name="language[]"
+              className="block text-gray-700 font-bold mb-2"
+            >
               What is your child's primary language?
             </label>
             <div className="flex flex-col space-y-2">
@@ -276,6 +280,7 @@ export default function Forms() {
         <button
           type="submit"
           onClick={notify}
+          //   onSubmit={handleSubmit}
           className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
         >
           Submit
