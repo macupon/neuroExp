@@ -60,6 +60,7 @@ export default function Forms() {
         // data-netlify="true"
         netlify
       >
+        <input type="hidden" name="form-name" value="contact"/>
         <div className="sm:flex">
           <div className="mb-4">
             <label
