@@ -57,7 +57,7 @@ export default function Forms() {
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         method="post"
         name="contact"
-        action="/contact"
+        action="/"
       >
         <input type="hidden" name="form-name" value="contact" />
         <div className="sm:flex">
