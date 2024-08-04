@@ -57,7 +57,6 @@ export default function Forms() {
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         method="POST"
         name="contactus"
-        action="/contactus"
       >
         <input type="hidden" name="form-name" value="contactus" />
         <div className="sm:flex">
