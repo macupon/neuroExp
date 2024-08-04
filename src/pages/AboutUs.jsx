@@ -78,7 +78,7 @@ export default function AboutUs() {
 
       <div className='flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md'>
         <div className='flex flex-col md:flex-row items-top'>
-          <img src={xafsaImg} alt="" className='md:h-[200px] lg:w-[1300px] lg:h-[410px] rounded-lg'/>
+          <img src={xafsaImg} alt="" className='md:h-[200px]  lg:h-[410px] rounded-lg'/>
           <div className="md:ml-10">
             <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
             Xafsa Said
