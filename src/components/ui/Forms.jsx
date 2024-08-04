@@ -56,9 +56,10 @@ export default function Forms() {
       <form
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         method="POST"
-        name="contactus"
+        name="contact"
+        action="/contactus"
       >
-        <input type="hidden" name="form-name" value="contactus" />
+        <input type="hidden" name="form-name" value="contact" />
         <div className="sm:flex">
           <div className="mb-4">
             <label
