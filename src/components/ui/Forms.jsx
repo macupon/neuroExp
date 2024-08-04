@@ -57,7 +57,7 @@ export default function Forms() {
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         method="post"
         name="contact"
-        action="/"
+        // action="/"
       >
         <input type="hidden" name="form-name" value="contact" />
         <div className="sm:flex">
@@ -79,7 +79,7 @@ export default function Forms() {
 
           <div className="mb-4">
             <label
-              htmlFor="userName"
+              htmlFor="email"
               className="block text-gray-700 font-bold mb-2"
             >
               Email
