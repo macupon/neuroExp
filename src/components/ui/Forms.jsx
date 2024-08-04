@@ -55,6 +55,7 @@ export default function Forms() {
   return (
     <div>
       <form
+        method="POST"
         onSubmit={handleSubmit}
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         name="contact"
