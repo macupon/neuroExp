@@ -59,9 +59,9 @@ export default function Forms() {
         className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
         name="contact"
         data-netlify="true"
-        netifly
+        netlifly
       >
-        <div className="flex">
+        <div className="sm:flex">
           <div className="mb-4">
             <label
               htmlFor="userName"
@@ -73,7 +73,7 @@ export default function Forms() {
               type="text"
               id="userName"
               ref={userNameRef}
-              className="w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
+              className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
             />
           </div>
 
@@ -88,7 +88,7 @@ export default function Forms() {
               type="email"
               id="email"
               ref={emailRef}
-              className="w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+              className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
             />
           </div>
         </div>
@@ -104,12 +104,12 @@ export default function Forms() {
             type="tel"
             id="phoneNumber"
             ref={phoneNumberRef}
-            className="w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+            className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
           />
         </div>
 
         {/* Radio Button Group for Service Type */}
-        <div className="flex space-x-48 mt-12">
+        <div className="sm:flex md:space-x-48 mt-12">
           <div ref={serviceTypeRef} className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
               What service are you interested in?
