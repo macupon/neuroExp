@@ -17,8 +17,8 @@ export default function Forms() {
   //   const notify = () => toast("Form submitted successfully!");
 
   //   Handle form submission
-  const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+  const handleSubmit = () => {
+    // event.preventDefault(); // Prevent the default form submission behavior
 
     // Access the value of the input using the ref
     const userName = userNameRef.current.value;
