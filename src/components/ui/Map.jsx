@@ -9,7 +9,13 @@ export default function Map() {
           <ul className="text-lg leading-8">
             <li>Address: Hørkær 22</li>
             <li>Herlev 2730, Danmark</li>
-            <li>Phone: 45 50 23 92 40</li>
+            <li>
+              Phone: +45 22 97 92 40{" "}
+              <span className="text-red-400">
+                (updated 16th September 2024)
+              </span>
+            </li>
+            {/* +45 50 23 92 40 */}
             <li>Email: info@neuro-exp.com</li>
             <li>Every day from 9.30 a.m. to 18.00.</li>
           </ul>
