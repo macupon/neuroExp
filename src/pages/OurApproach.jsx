@@ -6,7 +6,7 @@ import {
   authenticAACCard,
 } from "../text/ourApproachText";
 
-import Card from "../components/ui/Card";
+import Card from "../components/ui/Card.jsx";
 
 export default function OurApproach() {
   const cards = [
