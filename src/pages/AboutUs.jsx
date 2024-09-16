@@ -2,12 +2,13 @@
 
 export default function AboutUs() {
   return (
-    <div className="flex flex-wrap p-6 md:p-8  md:items-center lg:items-center">
-      <div className="flex flex-col md:flex-row md:justify-center">
+    <div className="flex flex-col flex-wrap p-6 md:p-8  md:items-center lg:items-center">
+      <div className="flex flex-col md:flex-row md:justify-center items-center">
         <img
           src="/florImg.jpeg"
           alt="Florencia"
-          className="md:w-3/6 md:h-[330px] md:mt-6 lg:mt-2 lg:h-auto lg:w-auto rounded-lg"
+          // className="md:w-3/6 md:h-[330px] md:mt-6 lg:mt-2 lg:h-auto lg:w-auto rounded-lg"
+          className="w-[50vw] h-[50vw] md:w-[40vw] md:h-[40vw] lg:w-[30vw] lg:h-[30vw] rounded-full object-cover"
         />
 
         <div className="md:w-1/2">
@@ -20,19 +21,19 @@ export default function AboutUs() {
             On this page I will share with you a little bit about my story, my
             journey and my future projects.
             <br />
-            <b>Follow me!</b>
+            <b className="text-cyan-600">Follow me!</b>
           </p>
         </div>
       </div>
 
-      <div className="bg-white/50 mt-8 rounded-xl p-8">
-        <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
+      <section className="bg-white/50 mt-8 rounded-xl p-8">
+        <h2 className="font-bold md:ml-0 text-4xl lg:text-5xl text-gray-800">
           Florencia Guillén
         </h2>
-        <p className="mt-3 md:text-xl text-gray-700">
+        <p className="mt-1 md:text-2xl text-gray-500">
           Speech and Language Pathologist
         </p>
-        <p className="mt-5 leading-7 md:leading-8 lg:leading-10 md:text-md text-gray-700">
+        <p className="mt-6 font-light text-m leading-7">
           I was born in Vitoria, Spain but was raised in Argentina. There I
           studied <b>Speech Therapy</b> at the{" "}
           <b>
@@ -44,33 +45,43 @@ export default function AboutUs() {
           </b>
           in Buenos Aires. After 5 years of study, I pursued a Postgraduate
           Degree of 3 semesters in Early Intervention and Stimulation.
-          <br />
+        </p>
+        <p className="mt-3 font-light text-m leading-7">
           I worked as a Speech and Language Pathologist in different
           Interdisciplinary Teams for children and adults. I had the privilege
           of working in several teams formed by very good professionals, who
           contributed immensely to my professional practice.
-          <br />
-          I worked in Foundations such as: <br />- Fundación Spine -{" "}
-          <b>
-            <u>
-              <a href="https://www.spine.org.ar/ ">Spine</a>
-            </u>
-          </b>{" "}
-          - Foundation dedicated to Treatment and Research of Rare Diseases.
-          <br />- Alunco Foundation -{" "}
-          <b>
-            <u>
-              <a href="https://alunco.org/">Alunco</a>
-            </u>
-          </b>{" "}
-          - First Transdisciplinary Neurorehabilitation Center in Latin America.
-          <br />
+        </p>
+        <p className="mt-3 font-light text-m leading-7">
+          I worked in Foundations such as:
+          <ul className="list-disc list-inside pl-5">
+            <li>
+              <b>
+                <u>
+                  <a href="https://www.spine.org.ar/ ">Fundación Spine</a>
+                </u>
+              </b>{" "}
+              - Foundation dedicated to Treatment and Research of Rare Diseases.
+            </li>
+            <li>
+              <b>
+                <u>
+                  <a href="https://alunco.org/">Alunco Foundation</a>
+                </u>
+              </b>{" "}
+              - First Transdisciplinary Neurorehabilitation Center in Latin
+              America.
+            </li>
+          </ul>
+        </p>
+        <p className="mt-3 font-light text-m leading-7">
           I am currently living in Copenhagen, Denmark since March 2020. My
           mission in starting this business is to help more families and
           children with developmental, language and/or communication challenges
           receive the right kind of therapy that is strengths-based and focuses
           on meeting their specific needs.
-          <br />
+        </p>
+        <p className="mt-3 font-light text-m leading-7">
           Most of the families we work with have different cultural background,
           so I understand how difficult it is to adapt to such a different
           culture. Being expats, one of the most valuable things is to have
@@ -80,30 +91,31 @@ export default function AboutUs() {
           is important to know what rights are available to accompany your
           children and family members.
         </p>
-      </div>
+      </section>
 
       <div className="flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md">
-        <div className="flex flex-col md:flex-row items-top">
+        <div className="flex flex-col md:flex-row items-center md:items-start">
           <img
             src="/xafsaImg.jpeg.webp"
-            alt=""
-            className="md:h-[200px]  lg:h-[410px] rounded-lg"
+            alt="Xafsa Said"
+            className="w-[35vw] h-[35vw] md:w-auto md:h-[370px] lg:h-[370px] rounded-full md:rounded-lg object-cover"
           />
-          <div className="md:ml-10">
+          <div className="md:ml-10 mt-4 md:mt-0">
             <h2 className="font-bold md:ml-0 text-xl lg:text-5xl text-gray-800">
               Xafsa Said
             </h2>
-            <p className="mt-3 md:text-xl text-gray-700">
+            <p className="mt-1 md:text-xl text-gray-500">
               Speech and Language Assistant
             </p>
-            <p className="md:mt-5 leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700">
+            <p className="mt-8 font-light text-m leading-7">
               My name is Xafsa Said and I'm 25 years old. I'm from Odense and
               currently live in Herlev. Originally I'm from Somalia and
-              therefore I speak Somali, Danish and English fluenty. I'm
+              therefore I speak Somali, Danish, and English fluently. I'm
               currently pursuing my Master's degree in Audiologopædi at the
-              University of Copenhagen and will finish December 2024.
+              University of Copenhagen and will finish in December 2024.
+              <br />
               <br />I am deeply passionate about working with children who face
-              challenges in speech, language and/or communication. With
+              challenges in speech, language, and/or communication. With
               approximately one year of practical experience from PPR in
               Kolding, I have had the opportunity to work directly with this
               specific demographic. Additionally, I have had the privilege of
@@ -117,11 +129,14 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="ml-10 my-5">
-        <h2 className="bg-sky-200 my-5 w-10 font-bold text-3xl md:text-4xl lg:text-5xl">
-          Collaborations
-        </h2>
-        <p>
+      <div className="flex flex-col items-center justify-center mt-20">
+        <div>
+          <h2 className="bg-sky-200 font-bold text-3xl md:text-4xl lg:text-5xl text-center">
+            Collaborations
+          </h2>
+        </div>
+
+        <p className="mt-2  text-center">
           We collaborate with different professionals through the Hometraining
           Program.
         </p>
@@ -130,17 +145,18 @@ export default function AboutUs() {
       <div className="flex flex-col justify-center lg:flex-row  lg:max-w-10xl  gap-8  group mt-8">
         <div className="flex flex-col justify-between bg-white/50 p-8 rounded-xl lg:w-1/2 shadow-xl">
           <div className="flex flex-col">
-            <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
               <img
                 src="/arelyImg.webp"
                 alt=""
-                className="md:w-[26vw] md:h-[18vw] md:my-5 rounded-xl"
+                className="w-[30vw] h-[30vw] md:w-[24vw] md:h-[24vw] rounded-full object-cover"
               />
+              <h3 className="font-bold md:ml-0 text-xl lg:text-3xl text-gray-800 md:my-5">
+                Arely Alvarado
+              </h3>
             </div>
-            <h3 className="font-bold md:ml-0 text-xl lg:text-3xl text-gray-800 md:my-5">
-              Arely Alvarado
-            </h3>
-            <p className="leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700">
+
+            <p className="mt-1 font-light text-m leading-7">
               Arely is a Psychologist originally from Honduras and currently
               living in Copenhagen for many years. She has extensive experience
               in the Cognitive-Behavioral area under the ABA (Applied Behavior
@@ -156,17 +172,19 @@ export default function AboutUs() {
 
         <div className="flex flex-col justify-between bg-white/50 p-8 rounded-xl lg:w-1/2 shadow-xl">
           <div className="flex flex-col">
-            <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
               <img
                 src="/paulaImg.webp"
                 alt=""
-                className="md:w-[26vw] md:h-[18vw] md:my-5 rounded-xl"
+                // className="md:w-[26vw] md:h-[18vw] md:my-5 rounded-xl"
+                className="w-[30vw] h-[30vw] md:w-[24vw] md:h-[24vw] rounded-full object-cover"
               />
+              <h3 className="font-bold md:ml-0 text-xl lg:text-3xl text-gray-800 md:my-5">
+                Paula Martinez
+              </h3>
             </div>
-            <h3 className="font-bold md:ml-0 text-xl lg:text-3xl text-gray-800 md:my-5">
-              Paula Martinez
-            </h3>
-            <p className="leading-7 md:leading-6 lg:leading-10 md:text-md text-gray-700">
+
+            <p className="mt-1 font-light text-m leading-7">
               I was born in Buenos Aires, Argentina. As a Physical Education
               Teacher, specialized in the motor development and early
               stimulation, I have dedicated my professional life to working with
