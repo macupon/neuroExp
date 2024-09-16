@@ -23,6 +23,7 @@ export default function Card({description, srcImg, title, subtitle }) {
     </div>
   );
 }
+
 Card.propTypes = {
     srcImg: PropTypes.string,
     title: PropTypes.string.isRequired,
