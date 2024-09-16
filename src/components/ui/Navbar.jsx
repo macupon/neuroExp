@@ -3,7 +3,7 @@ import { IgIcon } from "./icons/IgIcon";
 import { MenuIcon } from "./icons/Menuicon";
 import { FbIcon } from "./icons/FbIcon";
 import { LinkIcon } from "./icons/LinkIcon";
-import navLogo from "../../../public/nav-logo.png";
+// import navLogo from "../../../public/nav-logo.png";
 import { useState, useEffect, useRef } from "react";
 
 export const Navbar = () => {
@@ -59,7 +59,7 @@ export const Navbar = () => {
       <header className="bg-violet-100 md:sticky md:top-0">
         <nav className="flex justify-between items-center w-[92%] mx-auto h-20 ">
           <div>
-            <img src={navLogo} alt="logo" className="w-10" />
+            <img src="/nav-logo.png" alt="logo" className="w-10" />
           </div>
           <div
             className={

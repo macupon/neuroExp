@@ -1,9 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import babyblocks from "../../public/cover2_files/babyblocks.webp";
-import babybear from "../../public/cover2_files/babybear.webp";
-import speechtep from "../../public/cover2_files/speechtep.webp";
-import babydough from "../../public/cover2_files/babydough.webp";
-import speechterap from "../../public/cover2_files/speechterap.webp";
+// import babyblocks from "../../public/cover2_files/babyblocks.webp";
+// import babybear from "../../public/cover2_files/babybear.webp";
+// import speechtep from "../../public/cover2_files/speechtep.webp";
+// import babydough from "../../public/cover2_files/babydough.webp";
+// import speechterap from "../../public/cover2_files/speechterap.webp";
 import { useNavigate } from "react-router-dom";
 
 export default function WhatWeOffer() {
@@ -17,9 +17,7 @@ export default function WhatWeOffer() {
     <>
       <div className="flex flex-wrap p-6 md:p-8  md:items-center">
         <div className="flex flex-col md:flex-row p-4 md:p-8 rounded-xl justify-center  md:leading-10">
-          <h1
-            className="bg-sky-200 text-left font-bold w-10  md:h-24 md:mr-16  mb-6 md:mb-5 md:mt-0 md:w-24 md:ml-12 text-4xl md:text-6xl"
-          >
+          <h1 className="bg-sky-200 text-left font-bold w-10  md:h-24 md:mr-16  mb-6 md:mb-5 md:mt-0 md:w-24 md:ml-12 text-4xl md:text-6xl">
             WHAT WE OFFER
           </h1>
           <div className="mb-5 leading-7 md:leading-2 md:ml-20">
@@ -65,7 +63,7 @@ export default function WhatWeOffer() {
         </div>
 
         <img
-          src={babyblocks}
+          src="/cover2_files/babyblocks.webp"
           alt=""
           className="m-2 rounded-xl md:w-[100%] md:h-[400px]"
         />
@@ -73,7 +71,7 @@ export default function WhatWeOffer() {
         <div className="flex flex-col md:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md">
           <div className="mt-4 md:mt-0 flex flex-col md:flex-row items-top">
             <img
-              src={babybear}
+              src="/cover2_files/babybear.webp"
               alt=""
               className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
@@ -115,7 +113,7 @@ export default function WhatWeOffer() {
         <div className="flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md">
           <div className="mt-4 md:mt-0 flex flex-col md:flex-row items-top">
             <img
-              src={babydough}
+              src="/cover2_files/babydough.webp"
               alt=""
               className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
@@ -153,7 +151,7 @@ export default function WhatWeOffer() {
         <div className="flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md">
           <div className="mt-4 md:mt-0  flex flex-col md:flex-row items-top">
             <img
-              src={speechtep}
+              src="/cover2_files/speechtep.webp"
               alt=""
               className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
@@ -203,7 +201,7 @@ export default function WhatWeOffer() {
         <div className="flex flex-col lg:flex-col bg-white/50 p-8 rounded-xl mt-8 shadow-md">
           <div className="flex flex-col md:flex-row items-top">
             <img
-              src={speechterap}
+              src="/cover2_files/speechterap.webp"
               alt=""
               className="h-[300px] w-[300px] md:mt-2 rounded-lg"
             />
