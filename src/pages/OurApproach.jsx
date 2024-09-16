@@ -6,7 +6,7 @@ import {
   authenticAACCard,
 } from "../text/ourApproachText";
 
-import Card from "../components/ui/Card.jsx";
+import CardOurApproach from "@/components/ui/CardOurApproach.jsx";
 
 export default function OurApproach() {
   const cards = [
@@ -25,7 +25,7 @@ export default function OurApproach() {
 
         {cards &&
           cards.map((card, index) => (
-            <Card
+            <CardOurApproach
               key={index}
               title={card.title}
               subtitle={card.subtitle ? card.subtitle : ""}

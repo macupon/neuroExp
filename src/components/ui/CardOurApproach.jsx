@@ -1,6 +1,11 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export default function Card({description, srcImg, title, subtitle }) {
+export default function CardOurApproach({
+  description,
+  srcImg,
+  title,
+  subtitle,
+}) {
   const pathToPublic = "../../public/";
   return (
     <div className="flex flex-col bg-white/50 p-8 lg:p-14 rounded-xl my-8 shadow-md">
@@ -24,9 +29,9 @@ export default function Card({description, srcImg, title, subtitle }) {
   );
 }
 
-Card.propTypes = {
-    srcImg: PropTypes.string,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    subtitle: PropTypes.string,
-  };
+CardOurApproach.propTypes = {
+  srcImg: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+};
