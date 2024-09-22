@@ -11,10 +11,10 @@ export const Navbar = () => {
   let menuRef = useRef();
   let refBurguer = useRef();
 
-  const openMenu = () => {
-    // toggle boolean
+  const toggleMenu = () => {
     setMenuOn((prevState) => !prevState);
   };
+
   useEffect(() => {
     console.log("MenuOn state changed:", menuOn);
   }, [menuOn]);
@@ -71,22 +71,38 @@ export const Navbar = () => {
           >
             <ul className="flex bg-orange-100 flex-col md:items-center  md:flex-row  gap-8 md:gap-[4vw] md:bg-violet-100">
               <li>
-                <Link to="/" className="hover:text-gray-500">
+                <Link
+                  to="/"
+                  className="hover:text-gray-500"
+                  onClick={toggleMenu}
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/aboutus" className="hover:text-gray-500">
+                <Link
+                  to="/aboutus"
+                  className="hover:text-gray-500"
+                  onClick={toggleMenu}
+                >
                   Meet our team
                 </Link>
               </li>
               <li>
-                <Link to="/whatwedo" className="hover:text-gray-500">
+                <Link
+                  to="/whatwedo"
+                  className="hover:text-gray-500"
+                  onClick={toggleMenu}
+                >
                   Our patients
                 </Link>
               </li>
               <li>
-                <Link to="/ourapproach" className="hover:text-gray-500">
+                <Link
+                  to="/ourapproach"
+                  className="hover:text-gray-500"
+                  onClick={toggleMenu}
+                >
                   Our approach
                 </Link>
               </li>
@@ -98,17 +114,23 @@ export const Navbar = () => {
                                         md:bg-violet-100"
                 >
                   <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100 text-wrap">
-                    <Link to="/speechandlanguage">
+                    <Link to="/speechandlanguage" onClick={toggleMenu}>
                       Speech and Language Therapy
                     </Link>
                   </li>
                   <li className="md:w-26 lg:w-auto p-2 bg-orange-100 md:bg-violet-100">
-                    <Link to="/hometraining">Home Training</Link>
+                    <Link to="/hometraining" onClick={toggleMenu}>
+                      Home Training
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/contactus" className="hover:text-gray-500">
+                <Link
+                  to="/contactus"
+                  className="hover:text-gray-500"
+                  onClick={toggleMenu}
+                >
                   Contact us
                 </Link>
               </li>
@@ -122,7 +144,7 @@ export const Navbar = () => {
             </div>
             <div ref={refBurguer} className="md:hidden">
               {/* paso al componente hijo la funcion que quiero que se ejecute*/}
-              <MenuIcon handleClick={openMenu} />
+              <MenuIcon handleClick={toggleMenu} />
             </div>
           </div>
         </nav>

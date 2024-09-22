@@ -1,4 +1,4 @@
-// import Forms from "@/components/ui/Forms";
+import Forms from "@/components/ui/Forms";
 import Map from "../components/ui/Map";
 
 export default function ContactUs() {
@@ -23,9 +23,9 @@ export default function ContactUs() {
         inform you when we will have new appointments. We apologize for any
         inconvenience caused and thank you for your interest and trust!
       </h3>
-      {/* <div className="bg-white/50 rounded-xl shadow-md mx-5 mt-8 w-[100%]">
+      <div className="bg-white/50 rounded-xl shadow-xl mx-5 mt-8">
         <Forms />
-      </div> */}
+      </div>
       <div className="bg-white/50 rounded-xl shadow-md mx-5 mt-4 h-30">
         <Map />
       </div>
