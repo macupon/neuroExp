@@ -63,8 +63,8 @@ export default function Forms() {
       >
         <h2 className="mt-0 mb-4 text-2xl">Contact form</h2>
         <input type="hidden" name="form-name" value="contact v1" />
-        <div className="sm:flex gap-x-5">
-          <div className="mb-4 max-w-[50rem]">
+        <div className="sm:flex gap-x-5 flex-wrap">
+          <div className="mb-4 min-w-[10rem]">
             <label
               htmlFor="userName"
               className="block text-gray-700 font-bold mb-2"
@@ -80,7 +80,7 @@ export default function Forms() {
             />
           </div>
 
-          <div className="mb-4 max-w-[50rem]">
+          <div className="mb-4 min-w-[8rem] max-w-[30rem]">
             <label
               htmlFor="email"
               className="block text-gray-700 font-bold mb-2"
@@ -95,22 +95,22 @@ export default function Forms() {
               className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
             />
           </div>
-        </div>
 
-        <div className="mb-4 max-w-[10rem]">
-          <label
-            htmlFor="phoneNumber"
-            className="block text-gray-700 font-bold mb-2"
-          >
-            Phone Number
-          </label>
-          <input
-            type="tel"
-            id="phoneNumber"
-            ref={phoneNumberRef}
-            name="phone"
-            className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
-          />
+          <div className="mb-4 min-w-[10rem] max-w-[50rem]">
+            <label
+              htmlFor="phoneNumber"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Phone Number
+            </label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              ref={phoneNumberRef}
+              name="phone"
+              className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+            />
+          </div>
         </div>
 
         {/* Radio Button Group for Service Type */}
