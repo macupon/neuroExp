@@ -54,13 +54,14 @@ export default function Forms() {
   return (
     <div>
       <form
-        className="max-w-screen mx-auto p-10 bg-white shadow-md rounded"
+        className="max-w-screen mx-auto px-6 pt-5 pb-5 bg-white/10 shadow-md rounded"
         method="post"
         name="contact v1"
         // data-netlify="true"
         onSubmit={handleSubmit}
         action="/"
       >
+        <h2 className="mt-0 mb-4 text-2xl">Contact form</h2>
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="sm:flex">
           <div className="mb-4">
@@ -75,7 +76,7 @@ export default function Forms() {
               id="userName"
               name="name"
               ref={userNameRef}
-              className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
+              className="w-full lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
             />
           </div>
 
@@ -91,7 +92,7 @@ export default function Forms() {
               id="email"
               ref={emailRef}
               name="email"
-              className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+              className="w-full lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
             />
           </div>
         </div>
@@ -108,20 +109,25 @@ export default function Forms() {
             id="phoneNumber"
             ref={phoneNumberRef}
             name="phone"
-            className="w-auto lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+            className="w-full lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
           />
         </div>
 
         {/* Radio Button Group for Service Type */}
-        <div className="sm:flex md:space-x-48 mt-12">
-          <div ref={serviceTypeRef} className="mb-4">
+        <div
+          className="
+          flex flex-col mt-6 p-0 sm:flex 
+          md:flex-row md:gap-x-28 md:flex-wrap
+          lg:flex-row lg:gap-x-28 lg:flex-wrap"
+        >
+          <div ref={serviceTypeRef} className="mb-2 mt-4">
             <label
               name="service[]"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0"
             >
               What service are you interested in?
             </label>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col gap-2 md:gap-0 lg:gap-0 font-light">
               <label className="flex items-center space-x-3">
                 <input
                   type="radio"
@@ -162,14 +168,14 @@ export default function Forms() {
           </div>
 
           {/* Radio Button Group for Primary Language */}
-          <div ref={primaryLanguageRef} className="mb-4">
+          <div ref={primaryLanguageRef} className="mb-2 mt-4">
             <label
               name="language[]"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0"
             >
               What is your child's primary language?
             </label>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col gap-2 md:gap-0 lg:gap-0 font-light">
               <label className="flex items-center space-x-3">
                 <input
                   type="radio"
@@ -208,84 +214,91 @@ export default function Forms() {
               </label>
             </div>
           </div>
-        </div>
 
-        {/* Radio Button Group for Child's Age */}
-        <div name="age[]" ref={childAgeRef} className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2">
-            How old is your child?
-          </label>
-          <div className="flex flex-col space-y-2">
-            <label className="flex items-center space-x-3">
-              <input
-                type="radio"
-                name="childAge"
-                value="0-12"
-                className="form-radio"
-              />
-              <span>0 - 12 months</span>
+          {/* Radio Button Group for Child's Age */}
+          <div
+            name="age[]"
+            ref={childAgeRef}
+            className="mt-4 mb-1 md:mb-0 lg:mb-0"
+          >
+            <label className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0">
+              How old is your child?
             </label>
-            <label className="flex items-center space-x-3">
-              <input
-                type="radio"
-                name="childAge"
-                value="12-24"
-                className="form-radio"
-              />
-              <span>12 - 24 months</span>
-            </label>
-            <label className="flex items-center space-x-3">
-              <input
-                type="radio"
-                name="childAge"
-                value="2-3"
-                className="form-radio"
-              />
-              <span>2 - 3 years old</span>
-            </label>
-            <label className="flex items-center space-x-3">
-              <input
-                type="radio"
-                name="childAge"
-                value="4-5"
-                className="form-radio"
-              />
-              <span>4 - 5 years old</span>
-            </label>
-            <label className="flex items-center space-x-3">
-              <input
-                type="radio"
-                name="childAge"
-                value="OVER6"
-                className="form-radio"
-              />
-              <span>Over 6 years old</span>
-            </label>
+            <div className="flex flex-col gap-2 md:gap-0 lg:gap-0 font-light">
+              <label className="flex items-center space-x-3">
+                <input
+                  type="radio"
+                  name="childAge"
+                  value="0-12"
+                  className="form-radio"
+                />
+                <span>0 - 12 months</span>
+              </label>
+              <label className="flex items-center space-x-3">
+                <input
+                  type="radio"
+                  name="childAge"
+                  value="12-24"
+                  className="form-radio"
+                />
+                <span>12 - 24 months</span>
+              </label>
+              <label className="flex items-center space-x-3">
+                <input
+                  type="radio"
+                  name="childAge"
+                  value="2-3"
+                  className="form-radio"
+                />
+                <span>2 - 3 years old</span>
+              </label>
+              <label className="flex items-center space-x-3">
+                <input
+                  type="radio"
+                  name="childAge"
+                  value="4-5"
+                  className="form-radio"
+                />
+                <span>4 - 5 years old</span>
+              </label>
+              <label className="flex items-center space-x-3">
+                <input
+                  type="radio"
+                  name="childAge"
+                  value="OVER6"
+                  className="form-radio"
+                />
+                <span>Over 6 years old</span>
+              </label>
+            </div>
           </div>
         </div>
 
         {/* Textarea for Bio */}
-        <div className="mb-4">
-          <label htmlFor="bio" className="block text-gray-700 font-bold mb-2">
-            Bio
+        <div className="mt-6 mb-1 md:m-mb-1 lg:-mb-1">
+          <label
+            htmlFor="Message:"
+            className="block text-gray-700 font-bold mb-2"
+          >
+            Message:
           </label>
           <textarea
             id="bio"
             ref={bioRef}
             name="message"
-            placeholder="Tell us a little bit about yourself"
+            placeholder="Tell us a little bit about the case"
             className="w-full px-3 py-2 border rounded shadow resize-none focus:outline-none focus:shadow-outline"
             rows="4"
           />
         </div>
-
-        <button
-          type="submit"
-          //   onClick={notify}
-          className="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
-        >
-          Submit
-        </button>
+        <div className="flex flex-col items-center mt-4">
+          <button
+            type="submit"
+            className="bg-sky-500 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 focus:outline-none focus:shadow-outline"
+          >
+            Submit
+          </button>
+        </div>
       </form>
       {/* <ToastContainer /> */}
     </div>

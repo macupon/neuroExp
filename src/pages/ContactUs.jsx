@@ -23,7 +23,7 @@ export default function ContactUs() {
         inform you when we will have new appointments. We apologize for any
         inconvenience caused and thank you for your interest and trust!
       </h3>
-      <div className="bg-white/50 rounded-xl shadow-xl mx-5 mt-8">
+      <div className="bg-white/50 rounded-xl shadow-xl mx-5 mt-4">
         <Forms />
       </div>
       <div className="bg-white/50 rounded-xl shadow-md mx-5 mt-4 h-30">
