@@ -19,7 +19,13 @@ export default function OurApproach() {
   return (
     <>
       <div className="flex flex-wrap p-6 px-14 lg:px-24">
-        <h2 className="ml-5 mt-12 lg:mt-24 flex justify-center font-bold text-3xl md:text-5xl">
+        <h2
+          className="
+              bg-sky-200 text-left font-bold w-10 mb-4 text-4xl
+              md:h-24 md:mr-16 md:mb-5 md:mt-0 md:w-12 md:text-5xl
+              lg:ml-12 lg:mt-0 lg:text-5xl
+        "
+        >
           Our Approach
         </h2>
 

@@ -58,7 +58,7 @@ export default function Forms() {
         method="post"
         name="contact v1"
         // data-netlify="true"
-        onSubmit={handleSubmit} 
+        onSubmit={handleSubmit}
         action="/"
       >
         <input type="hidden" name="form-name" value="contact v1" />

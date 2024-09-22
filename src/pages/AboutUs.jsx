@@ -15,11 +15,14 @@ export default function AboutUs() {
           <h1 className="bg-sky-200 my-5 w-10 font-bold md:ml-8 lg:ml-12 text-3xl md:text-4xl lg:text-5xl">
             Hello everyone!
           </h1>
-          <p className="mb-5 p-2 leading-8 md:leading-8 lg:leading-10 md:ml-8 text-xl md:text-2xl lg:text-3xl ">
-            <b>I'm Florencia Guillén</b> and I'm a Speech and Language
-            therapist, founder of NeuroExp and Total Communication Supervisor.
-            On this page I will share with you a little bit about my story, my
-            journey and my future projects.
+          <p className="mb-5 p-2 leading-10 md:leading-8 lg:leading-10 md:ml-8 text-2xl md:text-xl lg:text-xl font-light">
+            I'm{" "}
+            <span className="font-medium text-3xl md:text-2xl lg:text-3xl text-cyan-600">
+              Florencia Guillén
+            </span>{" "}
+            and I'm a Speech and Language therapist, founder of NeuroExp and
+            Total Communication Supervisor. On this page I will share with you a
+            little bit about my story, my journey and my future projects.
             <br />
             <b className="text-cyan-600">Follow me!</b>
           </p>
