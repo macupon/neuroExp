@@ -54,7 +54,7 @@ export default function Forms() {
   return (
     <div>
       <form
-        className="max-w-screen mx-auto px-6 pt-5 pb-5 bg-white/10 shadow-md rounded"
+        className="max-w-screen mx-auto px-6 md:px-10 lg:px-10 pt-5 pb-5 bg-white/10 shadow-md rounded"
         method="post"
         name="contact v1"
         // data-netlify="true"
@@ -63,8 +63,8 @@ export default function Forms() {
       >
         <h2 className="mt-0 mb-4 text-2xl">Contact form</h2>
         <input type="hidden" name="form-name" value="contact v1" />
-        <div className="sm:flex">
-          <div className="mb-4">
+        <div className="sm:flex gap-x-5">
+          <div className="mb-4 max-w-[50rem]">
             <label
               htmlFor="userName"
               className="block text-gray-700 font-bold mb-2"
@@ -76,11 +76,11 @@ export default function Forms() {
               id="userName"
               name="name"
               ref={userNameRef}
-              className="w-full lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
+              className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-4 max-w-[50rem]">
             <label
               htmlFor="email"
               className="block text-gray-700 font-bold mb-2"
@@ -92,12 +92,12 @@ export default function Forms() {
               id="email"
               ref={emailRef}
               name="email"
-              className="w-full lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+              className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
             />
           </div>
         </div>
 
-        <div className="mb-4">
+        <div className="mb-4 max-w-[10rem]">
           <label
             htmlFor="phoneNumber"
             className="block text-gray-700 font-bold mb-2"
@@ -109,14 +109,14 @@ export default function Forms() {
             id="phoneNumber"
             ref={phoneNumberRef}
             name="phone"
-            className="w-full lg:w-96 px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+            className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
           />
         </div>
 
         {/* Radio Button Group for Service Type */}
         <div
           className="
-          flex flex-col mt-6 p-0 sm:flex 
+          flex flex-col mt-4 p-0 sm:flex 
           md:flex-row md:gap-x-28 md:flex-wrap
           lg:flex-row lg:gap-x-28 lg:flex-wrap"
         >
