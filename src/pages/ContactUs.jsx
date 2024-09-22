@@ -17,10 +17,11 @@ export default function ContactUs() {
       >
         Contact us
       </h2>
-      <h3 className="text-left font-bold mt-3 mb-2 mx-5 text-xl text-red-500">
-        Unfortunately , we are unable to accommodate additional patients at this
-        time. We apologize for any inconvenience this may cause and appreciate
-        your understanding.
+      <h3 className="text-left font-medium mt-3 mb-2 mx-5 text-xl text-red-500">
+        Unfortunately we <u>do not have space available for new cases</u> at
+        this time. We invite you to join our <u>waiting list</u> where we will
+        inform you when we will have new appointments. We apologize for any
+        inconvenience caused and thank you for your interest and trust!
       </h3>
       {/* <div className="bg-white/50 rounded-xl shadow-md mx-5 mt-8 w-[100%]">
         <Forms />
