@@ -5,14 +5,20 @@ import { FbIcon } from "./icons/FbIcon";
 import { LinkIcon } from "./icons/LinkIcon";
 // import navLogo from "../../../public/nav-logo.png";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   const [menuOn, setMenuOn] = useState(false);
   let menuRef = useRef();
   let refBurguer = useRef();
 
   const toggleMenu = () => {
     setMenuOn((prevState) => !prevState);
+  };
+
+  const visitUserDetail = () => {
+    navigate('/user-detail'); // Navigate to /user-detail
   };
 
   useEffect(() => {
@@ -142,6 +148,15 @@ export const Navbar = () => {
               <IgIcon />
               <FbIcon />
             </div>
+            <div>
+              <img
+                src="../../public/user-profile.png"
+                alt="user icon"
+                onClick={visitUserDetail}
+                className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[35px] lg:h-[35px] object-cover cursor-pointer"
+              ></img>
+            </div>
+            
             <div ref={refBurguer} className="md:hidden">
               {/* paso al componente hijo la funcion que quiero que se ejecute*/}
               <MenuIcon handleClick={toggleMenu} />
