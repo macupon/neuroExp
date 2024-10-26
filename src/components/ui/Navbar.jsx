@@ -6,10 +6,13 @@ import { LinkIcon } from "./icons/LinkIcon";
 // import navLogo from "../../../public/nav-logo.png";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from "@/contexts/UserAuthContext";
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const [menuOn, setMenuOn] = useState(false);
+  const { authUser } = useAuth();
+  
   let menuRef = useRef();
   let refBurguer = useRef();
 
@@ -17,8 +20,14 @@ export const Navbar = () => {
     setMenuOn((prevState) => !prevState);
   };
 
-  const visitUserDetail = () => {
-    navigate('/user-detail'); // Navigate to /user-detail
+  const handleUserPicClick = () => {
+    if (authUser){
+      navigate('/user-detail'); // Navigate to /user-detail
+    }
+    else {
+      navigate('/signin'); // Navigate to /user-detail
+    }
+    
   };
 
   useEffect(() => {
@@ -45,7 +54,7 @@ export const Navbar = () => {
   // },[]);
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      console.log(menuRef.current);
+      // console.log(menuRef.current);
       const clickMenu = menuRef.current.contains(e.target);
       const clickBMenu = refBurguer.current.contains(e.target);
       if (menuRef.current && !clickMenu && !clickBMenu) {
@@ -152,7 +161,7 @@ export const Navbar = () => {
               <img
                 src="../../public/user-profile.png"
                 alt="user icon"
-                onClick={visitUserDetail}
+                onClick={handleUserPicClick}
                 className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[35px] lg:h-[35px] object-cover cursor-pointer"
               ></img>
             </div>

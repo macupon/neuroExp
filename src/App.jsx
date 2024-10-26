@@ -9,24 +9,29 @@ import Footer from "./components/ui/Footer";
 import OurApproach from "./pages/OurApproach";
 import ContactUs from "./pages/ContactUs";
 import UserDetail from "./pages/UserDetail";
+import SignIn from "./components/auth/SignIn";
+import { AuthProvider } from "../src/contexts/UserAuthContext";
 
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<IndexExp />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/whatwedo" element={<WhatWeDo />} />
-          <Route path="/ourapproach" element={<OurApproach />} />
-          <Route path="/speechandlanguage" element={<WhatWeOffer />} />
-          <Route path="/hometraining" element={<HomeTraining />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/user-detail" element={<UserDetail />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<IndexExp />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/whatwedo" element={<WhatWeDo />} />
+            <Route path="/ourapproach" element={<OurApproach />} />
+            <Route path="/speechandlanguage" element={<WhatWeOffer />} />
+            <Route path="/hometraining" element={<HomeTraining />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/user-detail" element={<UserDetail />} />
+            <Route path="/signin" element={<SignIn />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </>
   );
 }
