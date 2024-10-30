@@ -1,53 +1,206 @@
+import { useState } from "react";
 import { useAuth } from "../contexts/UserAuthContext";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
+import { useUser } from "../contexts/UserContext";
+import { useDB } from "../contexts/DBContext";
+import { Riple } from "react-loading-indicators";
+import { FaEdit, FaSave, FaTimes } from "react-icons/fa";
+import ProfilePicture from "../components/ProfilePicture";
+import { toast } from "react-toastify";
+
 
 export default function UserDetail() {
   const navigate = useNavigate();
-  const { authUser, logout } = useAuth();
+  const { logout } = useAuth();
+  const { user, setUser } = useUser();
+  const { updateMultipleFields } = useDB();
 
-  const getUser(){
-
-  }
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedName, setEditedName] = useState(user?.name || "");
+  const [editedSurname, setEditedSurname] = useState(user?.surname || "");
+  const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleLogout = async () => {
     try {
       await logout();
       navigate("/signin");
     } catch (error) {
-      console.error("logout failed", error);
+      console.error("Logout failed:", error);
+      // Optionally, set an error state here to display to the user
     }
   };
 
+  // Handle Modify Button Click
+  const handleModifyClick = () => {
+    setIsEditing(true);
+    setEditedName(user?.name || "");
+    setEditedSurname(user?.surname || "");
+    setError(null);
+  };
+
+  // Handle Cancel Button Click
+  const handleCancelClick = () => {
+    setIsEditing(false);
+    setEditedName(user?.name || "");
+    setEditedSurname(user?.surname || "");
+    setError(null);
+  };
+
+  // Handle Save Button Click
+  const handleSaveClick = async () => {
+    // Basic validation
+    if (!editedName.trim() || !editedSurname.trim()) {
+      setError("Name and Surname cannot be empty.");
+      return;
+    }
+
+    setIsSaving(true);
+    setError(null);
+
+    try {
+      // Prepare fields to update
+      const fieldsToUpdate = {
+        name: editedName.trim(),
+        surname: editedSurname.trim(),
+      };
+
+      // Update Firestore with the new fields
+      await updateMultipleFields("users", user.uid, fieldsToUpdate);
+
+      // Update local user state
+      setUser({
+        ...user,
+        name: editedName.trim(),
+        surname: editedSurname.trim(),
+      });
+
+      // Reset editing states
+      setIsEditing(false);
+      toast.success("Updated successfully!");
+    } catch (err) {
+      console.error("Error updating user data:", err);
+      setError("Failed to update user data. Please try again.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  // If user data is not available yet
+  if (!user) {
+    return (
+      <div className="flex justify-center h-screen items-center">
+        <Riple color="#0284c7" size="medium" text="" textColor="" />
+      </div>
+    );
+  }
+
   return (
-    <div>  
+    <div className="relative flex flex-col bg-white/50 p-8 mx-10 lg:p-14 rounded-xl mt-10 mb-8 shadow-md">
+      {/* Buttons Container */}
+      <div className="absolute top-5 right-5 flex flex-row items-center gap-4">
+        {/* Logout Button */}
+        <button
+          onClick={handleLogout}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg flex items-center"
+        >
+          Logout
+        </button>
 
-      {authUser ? (
-        
-        <div className="relative flex flex-col bg-white/50 p-8 mx-10 lg:p-14 rounded-xl mt-10 mb-8 shadow-md">
+        {/* Modify/Save Button */}
+        <button
+          onClick={isEditing ? handleSaveClick : handleModifyClick}
+          className={`bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center ${
+            isSaving ? "cursor-not-allowed opacity-50" : ""
+          }`}
+          disabled={isSaving}
+        >
+          {isEditing ? (
+            <>
+              <FaSave className="mr-2" />
+              {isSaving ? "Saving..." : "Save"}
+            </>
+          ) : (
+            <>
+              <FaEdit className="mr-2" />
+              Modify
+            </>
+          )}
+        </button>
+
+        {/* Cancel Button (Visible Only When Editing) */}
+        {isEditing && (
           <button
-            onClick={handleLogout}
-            className="absolute top-5 right-5">
-              logout
+            onClick={handleCancelClick}
+            className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center"
+          >
+            <FaTimes className="mr-2" />
+            Cancel
           </button>
+        )}
+      </div>
 
-          <div className="flex flex-row items-top">
-            <img
-              src="../../public/user-profile.png"
-              alt="user photo"
-              className="w-[20vw] h-[20vw] md:w-[20vw] md:h-[20vw] lg:w-[20vw] lg:h-[20vw] object-cover cursor-pointer mr-10"
-            ></img>
-            <div className="flex flex-col">
-              <h1>{authUser.tenantId}</h1>
-              
-              <p>last visit: 21/10/2024</p>
-              <p>number of sessions: 12</p>
-            </div>
-          </div>
+      <div className="flex flex-col items-center mt-10">
+        <ProfilePicture />
+      </div>
+
+      {/* User Information */}
+      <div className="flex flex-col items-start mt-10 space-y-4">
+        {/* Name */}
+        <div>
+          <label className="font-semibold">Name:</label>
+          {isEditing ? (
+            <input
+              type="text"
+              value={editedName}
+              onChange={(e) => setEditedName(e.target.value)}
+              className="ml-2 p-1 border rounded"
+            />
+          ) : (
+            <span className="ml-2">{user.name}</span>
+          )}
         </div>
-      ) : (
-        <div>go to login</div>
-      )}
+
+        {/* Surname */}
+        <div>
+          <label className="font-semibold">Surname:</label>
+          {isEditing ? (
+            <input
+              type="text"
+              value={editedSurname}
+              onChange={(e) => setEditedSurname(e.target.value)}
+              className="ml-2 p-1 border rounded"
+            />
+          ) : (
+            <span className="ml-2">{user.surname}</span>
+          )}
+        </div>
+
+        {/* Created At */}
+        <div>
+          <label className="font-semibold">User Created On:</label>
+          <span className="ml-2">
+            {user.createdAt.toDate().toLocaleString()}
+          </span>
+        </div>
+
+        {/* Last Visit */}
+        <div>
+          <label className="font-semibold">Last Visit:</label>
+          <span className="ml-2">
+            {user.lastVisit?.toDate().toLocaleString()}
+          </span>
+        </div>
+
+        {/* Number of Sessions */}
+        <div>
+          <label className="font-semibold">Number of Sessions:</label>
+          <span className="ml-2">{user.numberOfSessions}</span>
+        </div>
+
+        {/* Display Error Message */}
+        {error && <div className="text-red-500">{error}</div>}
+      </div>
     </div>
   );
 }

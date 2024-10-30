@@ -7,11 +7,13 @@ import { LinkIcon } from "./icons/LinkIcon";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "@/contexts/UserAuthContext";
+import { useUser } from "../../contexts/UserContext";
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const [menuOn, setMenuOn] = useState(false);
   const { authUser } = useAuth();
+  const { user } = useUser();
   
   let menuRef = useRef();
   let refBurguer = useRef();
@@ -71,8 +73,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="bg-violet-100 md:sticky md:top-0">
-        <nav className="flex justify-between items-center w-[92%] mx-auto h-20 ">
+      <header className="bg-violet-100 sticky top-0 z-50">
+        <nav className="flex justify-between items-center w-[92%] mx-auto h-20">
           <div>
             <img src="/nav-logo.png" alt="logo" className="w-10" />
           </div>
@@ -121,8 +123,8 @@ export const Navbar = () => {
                   Our approach
                 </Link>
               </li>
-              <li className=" hover:text-gray-500 group ">
-                Services
+              <li className=" hover:text-gray-500 group relative">
+                <span className="cursor-pointer">Services</span>
                 <ul
                   className="absolute whitespace-nowrap top-[55px] p-5 opacity-0 invisible group-hover:opacity-100 
                                         group-hover:visible  group-hover:top-[220px] md:group-hover:top-[80px] transition-all duration-300 bg-orange-100 
@@ -159,10 +161,11 @@ export const Navbar = () => {
             </div>
             <div>
               <img
-                src="../../public/user-profile.png"
+                src={user?.profilePictureURL || "/user-profile.png"} // ../../public
                 alt="user icon"
                 onClick={handleUserPicClick}
-                className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[35px] lg:h-[35px] object-cover cursor-pointer"
+                className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[35px] lg:h-[35px] object-cover cursor-pointer rounded-full"
+                aria-label="User Profile"
               ></img>
             </div>
             

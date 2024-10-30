@@ -1,12 +1,12 @@
 // src/context/AuthContext.tsx
 import React, { createContext, useContext, useState, useEffect } from "react";
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User, createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User, createUserWithEmailAndPassword, UserCredential } from "firebase/auth";
 import { auth } from "../firebase";
 
 interface AuthContextType {
   authUser: User | null;
-  login: (email: string, password: string) => void;
-  createUser: (email: string, password: string) => void;
+  login: (email: string, password: string) => Promise<UserCredential>;
+  createUserAuth: (email: string, password: string) => Promise<UserCredential>;
   logout: () => void;
 }
 
@@ -24,10 +24,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, []);
 
 
-  const login = (email: string, password: string): Promise<void> => {
-    return signInWithEmailAndPassword(auth, email, password).then(() => {
-      console.log("Login successful");
-    });
+  const login = (email: string, password: string): Promise<UserCredential> => {
+    return signInWithEmailAndPassword(auth, email, password)
+    ;
   };
 
   const logout = (): Promise<void> => {
@@ -53,14 +52,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   //     console.log(error)
   //   })
   // }
-  const createUser = (email: string, password: string): Promise<void> => {
-    return createUserWithEmailAndPassword(auth, email, password).then(() => {
-      console.log("Account created successfully");
-    });
+  const createUserAuth = (email: string, password: string): Promise<UserCredential> => {
+    return createUserWithEmailAndPassword(auth, email, password)
   };
 
   return (
-    <AuthContext.Provider value={{ authUser, login, logout, createUser }}>
+    <AuthContext.Provider value={{ authUser, login, logout, createUserAuth }}>
       {children}
     </AuthContext.Provider>
   );
