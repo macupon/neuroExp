@@ -2,18 +2,16 @@ import { useState } from "react";
 import { useAuth } from "../contexts/UserAuthContext";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
-import { useDB } from "../contexts/DBContext";
 import { Riple } from "react-loading-indicators";
 import { FaEdit, FaSave, FaTimes } from "react-icons/fa";
 import ProfilePicture from "../components/ProfilePicture";
 import { toast } from "react-toastify";
-
+import { UserManager } from "../services/database/UserManager";
 
 export default function UserDetail() {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const { user, setUser } = useUser();
-  const { updateMultipleFields } = useDB();
 
   const [isEditing, setIsEditing] = useState(false);
   const [editedName, setEditedName] = useState(user?.name || "");
@@ -65,15 +63,11 @@ export default function UserDetail() {
         surname: editedSurname.trim(),
       };
 
-      // Update Firestore with the new fields
-      await updateMultipleFields("users", user.uid, fieldsToUpdate);
+      // Update database with the new fields and fetch user
+      const updatedUser = await UserManager.updateUserFields(user.uid, fieldsToUpdate)
 
       // Update local user state
-      setUser({
-        ...user,
-        name: editedName.trim(),
-        surname: editedSurname.trim(),
-      });
+      setUser(updatedUser)
 
       // Reset editing states
       setIsEditing(false);

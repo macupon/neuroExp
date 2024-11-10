@@ -12,7 +12,7 @@ import UserDetail from "./pages/UserDetail";
 import SignIn from "./components/auth/SignIn";
 import { AuthProvider } from "../src/contexts/UserAuthContext";
 import { UserProvider } from "./contexts/UserContext";
-import { DBProvider } from "./contexts/DBContext";
+// import { DBProvider } from "./contexts/DBContext";
 import { StorageProvider } from "./contexts/StorageContext";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <DBProvider>
+        {/* <DBProvider> */}
           <UserProvider>
             <StorageProvider>
               <Router>
@@ -49,7 +49,7 @@ function App() {
               <ToastContainer position="bottom-right" autoClose={3000} />
             </StorageProvider>
           </UserProvider>
-        </DBProvider>
+        {/* </DBProvider> */}
       </AuthProvider>
     </>
   );

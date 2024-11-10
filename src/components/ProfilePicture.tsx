@@ -3,15 +3,14 @@ import { FaUpload, FaCheck, FaTimes } from "react-icons/fa";
 import { useUser } from "../contexts/UserContext";
 import { useStorage } from "../contexts/StorageContext";
 import { Riple } from "react-loading-indicators";
-import { useDB } from "../contexts/DBContext";
 import { toast } from "react-toastify";
 import imageCompression from "browser-image-compression";
+import { UserManager } from "../services/database/UserManager";
 // import ClipLoader from "react-spinners/ClipLoader"; // Assuming you're using react-spinners
 
 const ProfilePicture: React.FC = () => {
   const { user, setUser } = useUser();
   const { uploadFile, deleteFile } = useStorage();
-  const { updateMultipleFields } = useDB();
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewURL, setPreviewURL] = useState<string | null>(null);
@@ -97,13 +96,10 @@ const ProfilePicture: React.FC = () => {
         profilePicturePath: storagePath,
       };
 
-      await updateMultipleFields("users", user.uid, fieldsToUpdate);
-
-      setUser({
-        ...user,
-        profilePictureURL: downloadURL,
-        profilePicturePath: storagePath,
-      });
+      // await updateMultipleFields("users", user.uid, fieldsToUpdate);
+      const updatedUser = await UserManager.updateUserFields(user.uid, fieldsToUpdate)
+      // update current user
+      setUser(updatedUser)
 
       // Reset selected file and preview
       setSelectedFile(null);

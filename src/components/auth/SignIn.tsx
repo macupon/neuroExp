@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
 import { useDB } from "../../contexts/DBContext";
 import { useUser } from "../../contexts/UserContext";
-import { userType } from "../../types/user";
+import { User } from "../../models/user";
+import { UserManager } from "../../services/database/UserManager";
 
 export default function SignIn() {  
   const navigate = useNavigate();
   const { login, createUserAuth } = useAuth();
-  const { setDocument, getDocument } = useDB();
+  // const { setDocument, getDocument } = useDB();
   const { setUser } = useUser()
 
   const [email, setEmail] = useState("");
@@ -30,28 +31,35 @@ export default function SignIn() {
       else{
         // create user in Auth
         const userCredential = await createUserAuth(email, password);
-        const user = userCredential.user;
+        // add user to the database and fetch it
+        const user = await UserManager.createUser(
+          name,
+          surname,
+          userCredential
+        )
+        
+      //   const user = userCredential.user;
 
-        // Define the new user data
-        const newUser: userType = {
-          uid: user.uid,
-          email: user.email,
-          name: name,
-          surname: surname,
-          userType: "potentialPatient", // Adjust as needed or make dynamic
-          createdAt: new Date(), // Firestore Timestamps will handle this
-          lastVisit: new Date(),
-          numberOfSessions: 0,
-        };
+      //   // Define the new user data
+      //   const newUser: User = {
+      //     uid: user.uid,
+      //     email: user.email,
+      //     name: name,
+      //     surname: surname,
+      //     role: "potentialPatient", // Adjust as needed or make dynamic
+      //     createdAt: new Date(), // Firestore Timestamps will handle this
+      //     lastVisit: new Date(),
+      //     numberOfSessions: 0,
+      //   };
 
 
-        // Add the new user document to the "users" collection
-        await setDocument<userType>("users", user.uid, newUser);
+      //   // Add the new user document to the "users" collection
+      //   await setDocument<User>("users", user.uid, newUser);
 
-       // Fetch the newly created user data
-        const userData = await getDocument<userType>("users", user.uid);
-        if (userData) {
-          setUser(userData);
+      //  // Fetch the newly created user data
+      //   const userData = await getDocument<User>("users", user.uid);
+        if (user) {
+          setUser(user);
           navigate("/user-detail");
         } else {
           setErrorMessage("Failed to retrieve user data after signup.");
