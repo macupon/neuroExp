@@ -12,8 +12,6 @@ import UserDetail from "./pages/UserDetail";
 import SignIn from "./components/auth/SignIn";
 import { AuthProvider } from "../src/contexts/UserAuthContext";
 import { UserProvider } from "./contexts/UserContext";
-// import { DBProvider } from "./contexts/DBContext";
-import { StorageProvider } from "./contexts/StorageContext";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 
@@ -21,9 +19,7 @@ function App() {
   return (
     <>
       <AuthProvider>
-        {/* <DBProvider> */}
           <UserProvider>
-            <StorageProvider>
               <Router>
                 <div className="flex flex-col min-h-screen">
                   <Navbar />
@@ -47,9 +43,7 @@ function App() {
                 </div>
               </Router>
               <ToastContainer position="bottom-right" autoClose={3000} />
-            </StorageProvider>
           </UserProvider>
-        {/* </DBProvider> */}
       </AuthProvider>
     </>
   );

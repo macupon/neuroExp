@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useAuth } from "../../contexts/UserAuthContext";
 import { useNavigate } from "react-router-dom";
 import { FirebaseError } from "firebase/app";
-import { useDB } from "../../contexts/DBContext";
 import { useUser } from "../../contexts/UserContext";
 import { User } from "../../models/user";
 import { UserManager } from "../../services/database/UserManager";
@@ -32,32 +31,8 @@ export default function SignIn() {
         // create user in Auth
         const userCredential = await createUserAuth(email, password);
         // add user to the database and fetch it
-        const user = await UserManager.createUser(
-          name,
-          surname,
-          userCredential
-        )
-        
-      //   const user = userCredential.user;
-
-      //   // Define the new user data
-      //   const newUser: User = {
-      //     uid: user.uid,
-      //     email: user.email,
-      //     name: name,
-      //     surname: surname,
-      //     role: "potentialPatient", // Adjust as needed or make dynamic
-      //     createdAt: new Date(), // Firestore Timestamps will handle this
-      //     lastVisit: new Date(),
-      //     numberOfSessions: 0,
-      //   };
-
-
-      //   // Add the new user document to the "users" collection
-      //   await setDocument<User>("users", user.uid, newUser);
-
-      //  // Fetch the newly created user data
-      //   const userData = await getDocument<User>("users", user.uid);
+        const user = await UserManager.createUser(name, surname, userCredential)
+        //  // Fetch the newly created user data
         if (user) {
           setUser(user);
           navigate("/user-detail");

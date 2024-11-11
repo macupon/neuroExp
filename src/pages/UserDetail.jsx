@@ -135,7 +135,7 @@ export default function UserDetail() {
       </div>
 
       <div className="flex flex-col items-center mt-10">
-        <ProfilePicture />
+        <ProfilePicture isEditing={isEditing} />
       </div>
 
       {/* User Information */}

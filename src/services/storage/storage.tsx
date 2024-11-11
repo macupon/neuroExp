@@ -1,7 +1,6 @@
-// src/contexts/StorageContext.tsx
+// src/services/Storage.ts
 
-import React, { createContext, useContext } from "react";
-import { storage } from "../firebase"; // Adjust the path as needed
+import { FirebaseError } from "firebase/app";
 import {
   ref,
   uploadBytesResumable,
@@ -10,21 +9,12 @@ import {
   UploadTask,
   StorageReference,
 } from "firebase/storage";
+import { storage } from "../../firebase";
 
-interface StorageContextType {
-  uploadFile: (
-    file: File,
-    storagePath: string,
-    onProgress: (progress: number) => void
-  ) => Promise<string>;
-  deleteFile: (storagePath: string) => Promise<void>;
-}
-
-const StorageContext = createContext<StorageContextType | undefined>(undefined);
-
-export const StorageProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+/**
+ * Base Storage class encapsulating generic Firebase Storage operations as static methods.
+ */
+export class StorageService {
   /**
    * Uploads a file to Firebase Storage at the specified path and returns the download URL.
    *
@@ -33,11 +23,11 @@ export const StorageProvider: React.FC<{ children: React.ReactNode }> = ({
    * @param {(progress: number) => void} onProgress - Callback to track upload progress.
    * @returns {Promise<string>} - The download URL of the uploaded file.
    */
-  const uploadFile = async (
+  static async uploadFile(
     file: File,
     storagePath: string,
     onProgress: (progress: number) => void
-  ): Promise<string> => {
+  ): Promise<string> {
     return new Promise((resolve, reject) => {
       const fileRef: StorageReference = ref(storage, storagePath);
       const uploadTask: UploadTask = uploadBytesResumable(fileRef, file);
@@ -52,11 +42,15 @@ export const StorageProvider: React.FC<{ children: React.ReactNode }> = ({
         },
         (error) => {
           console.error("Error uploading file:", error);
+          if (error instanceof FirebaseError) {
+            console.error(`Firebase error uploading file to ${storagePath}:`, error.message);
+          }
           reject(error);
         },
         async () => {
           try {
             const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+            console.log(`File uploaded to ${storagePath} with URL: ${downloadURL}`);
             resolve(downloadURL);
           } catch (err) {
             console.error("Error getting download URL:", err);
@@ -65,7 +59,7 @@ export const StorageProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       );
     });
-  };
+  }
 
   /**
    * Deletes a file from Firebase Storage at the specified path.
@@ -73,28 +67,31 @@ export const StorageProvider: React.FC<{ children: React.ReactNode }> = ({
    * @param {string} storagePath - The path in Firebase Storage where the file is stored.
    * @returns {Promise<void>}
    */
-  const deleteFile = async (storagePath: string): Promise<void> => {
+  static async deleteFile(storagePath: string): Promise<void> {
     try {
       const fileRef = ref(storage, storagePath);
       await deleteObject(fileRef);
       console.log(`File at ${storagePath} deleted successfully.`);
     } catch (error) {
       console.error("Error deleting file:", error);
+      if (error instanceof FirebaseError) {
+        console.error(`Firebase error deleting file at ${storagePath}:`, error.message);
+      }
       throw error;
     }
-  };
-
-  return (
-    <StorageContext.Provider value={{ uploadFile, deleteFile }}>
-      {children}
-    </StorageContext.Provider>
-  );
-};
-
-export const useStorage = (): StorageContextType => {
-  const context = useContext(StorageContext);
-  if (!context) {
-    throw new Error("useStorage must be used within a StorageProvider");
   }
-  return context;
-};
+
+  /**
+   * Handles errors by logging them appropriately.
+   *
+   * @param {unknown} error - The error thrown.
+   * @param {string} context - A description of the operation being performed.
+   */
+  protected static handleError(error: unknown, context: string): void {
+    if (error instanceof FirebaseError) {
+      console.error(`Firebase error ${context}:`, error.message);
+    } else {
+      console.error(`Unexpected error ${context}:`, error);
+    }
+  }
+}

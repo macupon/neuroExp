@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaUpload, FaCheck, FaTimes } from "react-icons/fa";
 import { useUser } from "../contexts/UserContext";
-import { useStorage } from "../contexts/StorageContext";
 import { Riple } from "react-loading-indicators";
 import { toast } from "react-toastify";
-import imageCompression from "browser-image-compression";
-import { UserManager } from "../services/database/UserManager";
-// import ClipLoader from "react-spinners/ClipLoader"; // Assuming you're using react-spinners
+import { UserProfilePictureStorageManager } from "../services/storage/userProfilePictureStorageManager";
 
-const ProfilePicture: React.FC = () => {
+type ProfilePictureProps = {
+  isEditing: boolean;
+};
+
+const ProfilePicture: React.FC<ProfilePictureProps> = ({ isEditing }) => {
+  // const {isEditing} = ProfilePictureProps
   const { user, setUser } = useUser();
-  const { uploadFile, deleteFile } = useStorage();
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewURL, setPreviewURL] = useState<string | null>(null);
@@ -34,6 +35,11 @@ const ProfilePicture: React.FC = () => {
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile]);
 
+  useEffect(() => {
+    if (!isEditing) {
+      handleCancel()
+    }
+  }, [isEditing]);
 
   // Handle file selection
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,38 +74,16 @@ const ProfilePicture: React.FC = () => {
     setError(null);
 
     try {
-      // Compress the image before uploading
-      const options = {
-        maxSizeMB: 1, // Maximum size in MB
-        maxWidthOrHeight: 500, // Max width or height
-        useWebWorker: true,
-      };
-      const compressedFile = await imageCompression(selectedFile, options);
+      // Upload photo
+      const updatedUser =
+        await UserProfilePictureStorageManager.uploadProfilePicture(
+          selectedFile,
+          user,
+          (progress) => setUploadProgress(progress)
+        );
 
-
-      // Define the storage path
-      const storagePath = `profilePictures/${user.uid}/${compressedFile.name}`;
-
-      // Upload the new profile picture
-      const downloadURL = await uploadFile(compressedFile, storagePath, (progress) =>
-        setUploadProgress(progress)
-      );
-      
-      // Optionally, delete the previous profile picture to save storage space
-      if (user.profilePicturePath) {
-        await deleteFile(user.profilePicturePath);
-      }
-
-      // Update the user's profile picture URL and path in context and Firestore
-      const fieldsToUpdate = {
-        profilePictureURL: downloadURL,
-        profilePicturePath: storagePath,
-      };
-
-      // await updateMultipleFields("users", user.uid, fieldsToUpdate);
-      const updatedUser = await UserManager.updateUserFields(user.uid, fieldsToUpdate)
       // update current user
-      setUser(updatedUser)
+      setUser(updatedUser);
 
       // Reset selected file and preview
       setSelectedFile(null);
@@ -130,81 +114,94 @@ const ProfilePicture: React.FC = () => {
     setPreviewURL(null);
     setError(null);
 
-  // Reset the file input's value
-  if (fileInputRef.current) {
-    fileInputRef.current.value = "";
-  }
+    // Reset the file input's value
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
   };
 
   return (
     <div className="flex flex-col items-center">
-    {/* Display Current Profile Picture or Preview */}
-    <img
-      src={previewURL || user?.profilePictureURL || "/user-profile.png"} // Show preview if available
-      alt="User Profile"
-      className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full"
-    />
+      {/* Display Current Profile Picture or Preview */}
 
-    {/* File Input */}
-    <div className="mt-4">
-      <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileChange}
-        id="profile-picture-input"
-        className="hidden"
-        ref={fileInputRef}
-      />
-      <label
-        htmlFor="profile-picture-input"
-        className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center"
-      >
-        <FaUpload className="mr-2" />
-        {selectedFile ? "Select a different Picture" : "Upload Picture"}
-      </label>
+      {previewURL ? (
+        <img
+          src={previewURL || user?.profilePictureURL || "/user-profile.png"} // Show preview if available
+          alt="User Profile"
+          className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full"
+        />
+      ) : (
+        <img
+          src={user?.profilePictureURL || "/user-profile.png"} // Show preview if available
+          alt="User Profile"
+          className="w-32 h-32 md:w-40 md:h-40 object-cover rounded-full"
+        />
+      )}
+
+      {isEditing && (
+        <div>
+          {/* File Input */}
+          <div className="mt-4">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              id="profile-picture-input"
+              className="hidden"
+              ref={fileInputRef}
+            />
+            <label
+              htmlFor="profile-picture-input"
+              className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg cursor-pointer flex items-center"
+            >
+              <FaUpload className="mr-2" />
+              {selectedFile ? "Select a different Picture" : "Upload Picture"}
+            </label>
+          </div>
+
+          {/* Error Message */}
+          {error && <div className="text-red-500 mt-2">{error}</div>}
+
+          {/* Upload and Cancel Buttons */}
+          {selectedFile && !isUploading && (
+            <div className="flex space-x-2 mt-2">
+              <button
+                onClick={handleUpload}
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center"
+              >
+                <FaCheck className="mr-2" />
+                Confirm
+              </button>
+              <button
+                onClick={handleCancel}
+                className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center"
+              >
+                <FaTimes className="mr-2" />
+                Cancel
+              </button>
+            </div>
+          )}
+
+          {/* Upload Progress */}
+          {isUploading && (
+            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+              <div
+                className="bg-blue-600 h-2.5 rounded-full"
+                style={{ width: `${uploadProgress}%` }}
+              ></div>
+            </div>
+          )}
+
+          {/* Loading Indicator During Upload */}
+          {isUploading && (
+            <div className="flex items-center mt-2">
+              <Riple color="#0284c7" size="medium" text="" textColor="" />
+              <span className="ml-2 text-blue-500">Uploading...</span>
+            </div>
+          )}
+        </div>
+      )}
     </div>
-
-    {/* Error Message */}
-    {error && <div className="text-red-500 mt-2">{error}</div>}
-
-    {/* Upload and Cancel Buttons */}
-    {selectedFile && !isUploading && (
-      <div className="flex space-x-2 mt-2">
-        <button
-          onClick={handleUpload}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center"
-        >
-          <FaCheck className="mr-2" />
-          Upload
-        </button>
-        <button
-          onClick={handleCancel}
-          className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex items-center"
-        >
-          <FaTimes className="mr-2" />
-          Cancel
-        </button>
-      </div>
-    )}
-
-    {/* Upload Progress */}
-    {isUploading && (
-      <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
-        <div
-          className="bg-blue-600 h-2.5 rounded-full"
-          style={{ width: `${uploadProgress}%` }}
-        ></div>
-      </div>
-    )}
-
-    {/* Loading Indicator During Upload */}
-    {isUploading && (
-      <div className="flex items-center mt-2">
-        <Riple color="#0284c7" size="medium" text="" textColor="" />
-        <span className="ml-2 text-blue-500">Uploading...</span>
-      </div>
-    )}
-  </div>
   );
 };
 
