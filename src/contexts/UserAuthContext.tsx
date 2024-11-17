@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged, User, createUserWithEmailAndPassword, UserCredential } from "firebase/auth";
 import { auth } from "../firebase";
+import { UserManager } from "../services/database/UserManager";
 
 interface AuthContextType {
   authUser: User | null;
@@ -19,12 +20,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       setAuthUser(firebaseUser);
+      if (firebaseUser) {
+        try {
+          // Update the 'lastOnline' field to the current date and time
+          UserManager.updateUserField(
+            firebaseUser.uid,
+            "lastOnline",
+            new Date()
+          );
+          console.log(`Updated lastOnline for user ${firebaseUser.uid}`);
+        } catch (error) {
+          console.error(
+            `Failed to update lastOnline for user ${firebaseUser.uid}:`,
+            error
+          );
+        }
+      }
     });
     return () => unsubscribe();
   }, []);
 
 
   const login = (email: string, password: string): Promise<UserCredential> => {
+
     return signInWithEmailAndPassword(auth, email, password)
     ;
   };
@@ -35,23 +53,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     });
   };
 
-  // const signIn = (email: string, password: string) => {
-  //   signInWithEmailAndPassword(auth, email, password)
-  //   .then(userCredentials => {
-  //     console.log(userCredentials)
-  //   }).catch((error)=>{
-  //     console.log(error)
-  //   })
-  // }
-
-  // const createUser = (email: string, password: string) => {
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //   .then(userCredentials => {
-  //     console.log(userCredentials)
-  //   }).catch((error)=>{
-  //     console.log(error)
-  //   })
-  // }
   const createUserAuth = (email: string, password: string): Promise<UserCredential> => {
     return createUserWithEmailAndPassword(auth, email, password)
   };

@@ -24,8 +24,9 @@ export default function SignIn() {
     try {
       if (loginMode==="login") {
         const userCredential = await login(email, password)
+        await UserManager.updateUserField(userCredential.user.uid, 'lastOnline',new Date())
         // No need to 'setUser' as since the authUser is updated, the effect in the userContext will trigger and call 'setUser'
-        navigate("/user-detail");
+        navigate("/user-view");
       }
       else{
         // create user in Auth
@@ -35,7 +36,7 @@ export default function SignIn() {
         //  // Fetch the newly created user data
         if (user) {
           setUser(user);
-          navigate("/user-detail");
+          navigate("/user-view");
         } else {
           setErrorMessage("Failed to retrieve user data after signup.");
         }

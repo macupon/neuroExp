@@ -10,7 +10,6 @@ type ProfilePictureProps = {
 };
 
 const ProfilePicture: React.FC<ProfilePictureProps> = ({ isEditing }) => {
-  // const {isEditing} = ProfilePictureProps
   const { user, setUser } = useUser();
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

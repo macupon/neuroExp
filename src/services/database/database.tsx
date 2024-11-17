@@ -94,6 +94,30 @@ export class Database {
   }
 
   /**
+     * Retrieves all documents from the specified collection.
+     *
+     * @template T - The type of the document data.
+     * @param {string} collectionName - The Firestore collection name.
+     * @returns {Promise<(T & { uid: string })[]>} - An array of documents with their IDs.
+     */
+  static async getAllDocuments<T>(collectionName: string): Promise<(T & { uid: string })[]> {
+    try {
+      const collectionRef = collection(db, collectionName) as CollectionReference<T>;
+      const querySnapshot = await getDocs(collectionRef);
+      const documents: (T & { uid: string })[] = querySnapshot.docs.map(doc => ({
+        ...doc.data(),
+        uid: doc.id,
+      }));
+      console.log(`Fetched ${documents.length} documents from ${collectionName}`);
+      return documents;
+    } catch (error) {
+      this.handleError(error, `fetching all documents from ${collectionName}`);
+      throw error;
+    }
+  }
+
+
+  /**
    * Updates a specific field in a document.
    *
    * @template T - The type of the document data.

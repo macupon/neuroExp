@@ -8,14 +8,20 @@ export class User {
 
   name: string;
   surname: string;
-  role: UserRoleType;
-
-  createdAt: Date;
-  lastVisit?: Date;
-  numberOfSessions?: number;
   address?: string;
   profilePictureURL?: string; 
   profilePicturePath?: string;
+
+  role: UserRoleType;
+
+  createdAt: Date;
+  lastOnline?: Date;
+
+  lastSession?: Date;
+  nextSession?: Date;
+  numberOfSessions?: number;
+
+  allowBookAppointment: boolean;
 
   constructor(params: {
     uid: string;
@@ -24,11 +30,14 @@ export class User {
     surname: string;
     role?: UserRoleType;
     createdAt?: Date;
-    lastVisit?: Date;
+    lastOnline?: Date;
+    lastSession?: Date;
+    nextSession?: Date;
     numberOfSessions?: number;
     address?: string;
     profilePictureURL?: string; 
     profilePicturePath?: string;
+    allowBookAppointment: boolean;
   }) {
     this.uid = params.uid;
     this.email = params.email ?? null;
@@ -36,10 +45,13 @@ export class User {
     this.surname = params.surname;
     this.role = params.role ?? 'potentialPatient';
     this.createdAt = params.createdAt ?? new Date();
-    this.lastVisit = params.lastVisit ?? new Date();
+    this.lastOnline = params.lastOnline ?? new Date();
+    this.lastSession = params.lastSession ?? undefined;
+    this.nextSession = params.nextSession ?? undefined;
     this.numberOfSessions = params.numberOfSessions ?? 0;
     this.address = params.address;
     this.profilePictureURL = params.profilePictureURL;
     this.profilePicturePath = params.profilePicturePath;
+    this.allowBookAppointment = params.allowBookAppointment ?? false;
   }
 }

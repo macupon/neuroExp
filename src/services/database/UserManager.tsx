@@ -1,6 +1,7 @@
 import { Database } from "./database";
 import { User } from "../../models/user";
 import { UserCredential } from "firebase/auth";
+import { firebaseTimestampToDate } from "../../utils/dates";
 
 
 export class UserManager extends Database {
@@ -26,8 +27,9 @@ export class UserManager extends Database {
       surname: surname,
       role: "potentialPatient", // Adjust as needed or make dynamic
       createdAt: new Date(), // Firestore Timestamps will handle this
-      lastVisit: new Date(),
+      lastOnline: new Date(),
       numberOfSessions: 0,
+      allowBookAppointment: false
     };
 
     // Add the new user document to the "users" collection
@@ -45,7 +47,15 @@ export class UserManager extends Database {
    * @returns {Promise<User | null>}
    */
   static async getUser(userId: string): Promise<User | null> {
-    return this.getDocument<User>(this.collectionName, userId);
+    const user = await this.getDocument<User>(this.collectionName, userId);
+    if (user) {
+      // Convert Timestamp fields to Date
+      user.createdAt = firebaseTimestampToDate(user.createdAt) ?? new Date();
+      user.lastOnline = new Date();
+      user.lastSession = firebaseTimestampToDate(user.lastSession) ?? undefined;
+      user.nextSession = firebaseTimestampToDate(user.nextSession) ?? undefined;
+    }
+    return user;
   }
 
   /**
@@ -76,6 +86,28 @@ export class UserManager extends Database {
       return this.getUser(userId)
     }else{
       return null
+    }
+  }
+
+  /**
+   * Retrieves all users from the 'users' collection.
+   *
+   * @returns {Promise<User[]>} - An array of User objects.
+   */
+  static async getAllUsers(): Promise<User[]> {
+    try {
+      const rawUsers = await this.getAllDocuments<User>(this.collectionName);
+      const users = rawUsers.map((user) => ({
+        ...user,
+        createdAt: firebaseTimestampToDate(user.createdAt) ?? new Date(),
+        lastOnline: firebaseTimestampToDate(user.lastOnline),
+        lastSession: firebaseTimestampToDate(user.lastSession),
+        nextSession: firebaseTimestampToDate(user.nextSession),
+      }));
+      return users as User[];
+    } catch (error) {
+      this.handleError(error, `fetching all users`);
+      throw error;
     }
   }
 

@@ -3,17 +3,11 @@ import { IgIcon } from "./icons/IgIcon";
 import { MenuIcon } from "./icons/Menuicon";
 import { FbIcon } from "./icons/FbIcon";
 import { LinkIcon } from "./icons/LinkIcon";
-// import navLogo from "../../../public/nav-logo.png";
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from "@/contexts/UserAuthContext";
-import { useUser } from "../../contexts/UserContext";
+import UserNavbar from "./UserNavbar";
 
 export const Navbar = () => {
-  const navigate = useNavigate();
   const [menuOn, setMenuOn] = useState(false);
-  const { authUser } = useAuth();
-  const { user } = useUser();
   
   let menuRef = useRef();
   let refBurguer = useRef();
@@ -22,38 +16,10 @@ export const Navbar = () => {
     setMenuOn((prevState) => !prevState);
   };
 
-  const handleUserPicClick = () => {
-    if (authUser){
-      navigate('/user-detail'); // Navigate to /user-detail
-    }
-    else {
-      navigate('/signin'); // Navigate to /user-detail
-    }
-    
-  };
-
   useEffect(() => {
     console.log("MenuOn state changed:", menuOn);
   }, [menuOn]);
-  // useEffect(()=>{
-  //     const handler = (e) => {
-  //         // Si el clic es dentro del menú, no hacemos nada
-  //         if(menuRef.current.contains(e.target)){
-  //             setTimeout(() => {
-  //                 setMenuOn(false);
-  //             }, 100);
 
-  //         }
-  //         // Si no, cerramos el menú
-  //         else {
-  //             setMenuOn(false);
-  //         }
-  //     };
-  //     document.addEventListener("mousedown", handler);
-  //     return() =>{
-  //         document.removeEventListener("mousedown", handler)
-  //     }
-  // },[]);
   useEffect(() => {
     const handleOutsideClick = (e) => {
       // console.log(menuRef.current);
@@ -159,14 +125,8 @@ export const Navbar = () => {
               <IgIcon />
               <FbIcon />
             </div>
-            <div>
-              <img
-                src={user?.profilePictureURL || "/user-profile.png"} // ../../public
-                alt="user icon"
-                onClick={handleUserPicClick}
-                className="w-[5vw] h-[5vw] md:w-[4vw] md:h-[4vw] lg:w-[35px] lg:h-[35px] object-cover cursor-pointer rounded-full"
-                aria-label="User Profile"
-              ></img>
+            <div className="flex">
+              <UserNavbar/>
             </div>
             
             <div ref={refBurguer} className="md:hidden">

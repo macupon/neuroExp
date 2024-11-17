@@ -8,12 +8,12 @@ import HomeTraining from "./pages/HomeTraining";
 import Footer from "./components/ui/Footer";
 import OurApproach from "./pages/OurApproach";
 import ContactUs from "./pages/ContactUs";
-import UserDetail from "./pages/UserDetail";
 import SignIn from "./components/auth/SignIn";
 import { AuthProvider } from "../src/contexts/UserAuthContext";
 import { UserProvider } from "./contexts/UserContext";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import UserOnBoarding from "./pages/user-page/UserOnBoarding";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
                       />
                       <Route path="/hometraining" element={<HomeTraining />} />
                       <Route path="/contactus" element={<ContactUs />} />
-                      <Route path="/user-detail" element={<UserDetail />} />
+                      <Route path="/user-view" element={<UserOnBoarding />} />
                       <Route path="/signin" element={<SignIn />} />
                     </Routes>
                   </main>
