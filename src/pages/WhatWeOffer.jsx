@@ -217,11 +217,7 @@ export default function WhatWeOffer() {
                 environments where the child develops.
               </p>
               <p className="mt-4 md:w-3/4 text-gray-700">
-                The hourly session rates vary between 650 Dkk and 850 Dkk,
-                depending on what you are looking for and what needs to be
-                included for the therapy to be effective. Write to us privately
-                detailing what you are looking for and we will send you a
-                tailored budget!
+                Write to us privately detailing what you are looking for and we will send you a tailored budget!
               </p>
             </div>
           </div>
