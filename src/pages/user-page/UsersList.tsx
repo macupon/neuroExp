@@ -65,32 +65,35 @@ export const UsersList: React.FC = () => {
 
   return (
     <div>
-    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+    <table className="table-auto w-full border-collapse">
       <thead>
         <tr>
-          <th style={tableHeaderStyle}>Profile Picture</th>
+          <th className="border px-2 py-2 w-[55px] bg-[#f2f2f2]"></th>
           <th style={tableHeaderStyle}>Name</th>
           <th style={tableHeaderStyle}>Surname</th>
-          <th style={tableHeaderStyle}>Created At</th>
+          <th style={tableHeaderStyle}>email</th>
+          <th style={tableHeaderStyle}>Created</th>
           <th style={tableHeaderStyle}>Last time online</th>
-          <th style={tableHeaderStyle}>Number of Sessions</th>
-          <th style={tableHeaderStyle}>Allow Book Appointment</th>
+          <th style={tableHeaderStyle}>Sessions</th>
+          <th style={tableHeaderStyle}>Allow to book</th>
         </tr>
       </thead>
       <tbody>
         {users.map((user) => (
           <tr key={user.uid} style={tableRowStyle}>
-            <td style={tableCellStyle}>
+            <td className="flex flex-row justify-center border px-2 py-2 w-auto">
               <img
                 src={user.profilePictureURL || "default-profile-pic.jpg"} // Replace with your default image path
                 alt={`${user.name}'s profile`}
                 width="40"
                 height="40"
-                style={{ borderRadius: "50%" }}
+                className="h-[40px] w-[40px] object-cover rounded-full"
+                // style={{ borderRadius: "50%" }}
               />
             </td>
             <td style={tableCellStyle}>{user.name}</td>
             <td style={tableCellStyle}>{user.surname}</td>
+            <td style={tableCellStyle}>{user.email}</td>
             <td style={tableCellStyle}>{user.createdAt.toLocaleDateString()}</td>
             <td style={tableCellStyle}>{user.lastOnline ? user.lastOnline.toLocaleDateString() : "N/A"}</td>
             {/* params.lastVisit instanceof Date ? params.lastVisit : params.lastVisit?.toDate() */}
@@ -117,6 +120,7 @@ const tableHeaderStyle: React.CSSProperties = {
   padding: "8px",
   backgroundColor: "#f2f2f2",
   textAlign: "left",
+  width: "fit"
 };
 
 const tableCellStyle: React.CSSProperties = {
