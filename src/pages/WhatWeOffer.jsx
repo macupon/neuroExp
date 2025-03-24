@@ -104,7 +104,7 @@ export default function WhatWeOffer() {
           </div>
           <div className="mt-10 md:mt-5 md:flex md:justify-end mr-10">
             <button className="flex flex-col mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px] justify-center align-center items-center">
-              1500 Dkk
+              1800 Dkk
               <span className="text-xs">Contact us</span>
             </button>
           </div>
@@ -142,7 +142,7 @@ export default function WhatWeOffer() {
           </div>
           <div className="mt-10 md:mt-5 md:flex md:justify-end mr-10">
             <button className="flex flex-col mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px] justify-center align-center items-center">
-              1500 Dkk
+              1800 Dkk
               <span className="text-xs">Contact us</span>
             </button>
           </div>
@@ -192,7 +192,7 @@ export default function WhatWeOffer() {
               className="flex flex-col mt-[-20px] rounded-full bg-indigo-200 w-[120px] h-[60px] justify-center align-center items-center"
               onClick={navigateToContactUs}
             >
-              1000 Dkk
+              1200 Dkk
               <span className="text-xs">Contact us</span>
             </button>
           </div>
