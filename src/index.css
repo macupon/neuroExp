@@ -6,7 +6,8 @@
 @theme extend {
   --font-poppins: 'Poppins', sans-serif;
 
-  --color-purple: #3b0764;
+  --color-purple: var(--purple);
+
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -82,10 +83,12 @@
   --input: 214.3 31.8% 91.4%;
   --ring: 222.2 84% 4.9%;
 
+  --purple: #3b0764;
   --radius: 0.5rem;
 }
 
 .dark {
+  --purple: #e9d5ff;
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
 
@@ -127,5 +130,9 @@
     background-image: linear-gradient(0deg, #ffe5d4 0%, #fff6e1 100%);
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+  }
+  .dark body {
+    background-color: hsl(222.2 84% 4.9%);
+    background-image: none;
   }
 }

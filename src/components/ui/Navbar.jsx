@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from "react";
 const linkClass = ({ isActive }) =>
   isActive
     ? "text-purple font-semibold border-b-2 border-sky-200"
-    : "hover:text-gray-500";
+    : "hover:text-gray-500 dark:hover:text-gray-300";
 
 export const Navbar = () => {
   const [menuOn, setMenuOn] = useState(false);
@@ -32,7 +32,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-violet-100 md:sticky md:top-0 z-50">
+    <header className="bg-violet-100 dark:bg-gray-900 md:sticky md:top-0 z-50">
       <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         <div>
           <img src="/nav-logo.png" alt="NeuroExp logo" className="w-10" />
@@ -40,12 +40,12 @@ export const Navbar = () => {
         <div
           className={
             menuOn
-              ? "flex absolute bg-orange-100 min-h-[35vh] items-center px-6 left-0 top-[10%] w-full md:bg-violet-100 md:static md:min-h-fit md:w-auto duration-500"
-              : "absolute min-h-[60vh] left-0 top-[-100%] w-full flex md:static md:min-h-fit md:w-auto"
+              ? "flex absolute z-50 bg-white dark:bg-gray-900 shadow-lg px-6 py-8 left-0 top-20 w-full md:bg-violet-100 md:dark:bg-gray-900 md:shadow-none md:static md:py-0 md:w-auto"
+              : "hidden md:flex md:static md:w-auto"
           }
           ref={menuRef}
         >
-          <ul className="flex bg-orange-100 flex-col md:items-center md:flex-row gap-8 md:gap-[4vw] md:bg-violet-100">
+          <ul className="flex flex-col md:items-center md:flex-row gap-8 md:gap-[4vw] md:bg-violet-100 md:dark:bg-gray-900">
             <li>
               <NavLink to="/" className={linkClass} onClick={closeMenu} end>
                 Home
@@ -85,7 +85,13 @@ export const Navbar = () => {
             <FbIcon />
           </div>
           <div ref={refBurguer} className="md:hidden">
-            <MenuIcon handleClick={toggleMenu} />
+            <button
+              onClick={toggleMenu}
+              aria-label="Toggle navigation menu"
+              className="focus:outline-none"
+            >
+              <MenuIcon />
+            </button>
           </div>
         </div>
       </nav>

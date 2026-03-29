@@ -7,25 +7,25 @@ export default function Map() {
         <h3 className="text-2xl font-bold text-purple">Find us</h3>
         <div className="flex items-start gap-3">
           <MapPin className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
-          <div className="text-sm text-gray-700">
+          <div className="text-sm text-gray-700 dark:text-gray-200">
             <p>Horkær 22</p>
             <p>Herlev 2730, Danmark</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
           <Phone className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
-          <div className="text-sm text-gray-700">
+          <div className="text-sm text-gray-700 dark:text-gray-200">
             <p>+45 22 97 92 40</p>
-            <p className="text-xs text-gray-400 mt-0.5">* Updated September 2024</p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">* Updated September 2024</p>
           </div>
         </div>
         <div className="flex items-start gap-3">
           <Mail className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
-          <p className="text-sm text-gray-700">info@neuro-exp.com</p>
+          <p className="text-sm text-gray-700 dark:text-gray-200">info@neuro-exp.com</p>
         </div>
         <div className="flex items-start gap-3">
           <Clock className="w-5 h-5 text-sky-500 mt-0.5 shrink-0" />
-          <p className="text-sm text-gray-700">Every day 9:30 - 18:00</p>
+          <p className="text-sm text-gray-700 dark:text-gray-200">Every day 9:30 - 18:00</p>
         </div>
       </div>
       <div className="md:w-2/3">

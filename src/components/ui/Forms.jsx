@@ -65,7 +65,7 @@ export default function Forms() {
           <div>
             <label
               htmlFor="userName"
-              className="block text-gray-700 font-semibold text-sm mb-2"
+              className="block text-gray-700 dark:text-gray-200 font-semibold text-sm mb-2"
             >
               Full Name
             </label>
@@ -74,14 +74,14 @@ export default function Forms() {
               id="userName"
               name="name"
               ref={userNameRef}
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200"
+              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
             />
           </div>
 
           <div>
             <label
               htmlFor="email"
-              className="block text-gray-700 font-semibold text-sm mb-2"
+              className="block text-gray-700 dark:text-gray-200 font-semibold text-sm mb-2"
             >
               Email
             </label>
@@ -90,14 +90,14 @@ export default function Forms() {
               id="email"
               ref={emailRef}
               name="email"
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200"
+              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
             />
           </div>
 
           <div>
             <label
               htmlFor="phoneNumber"
-              className="block text-gray-700 font-semibold text-sm mb-2"
+              className="block text-gray-700 dark:text-gray-200 font-semibold text-sm mb-2"
             >
               Phone Number
             </label>
@@ -106,7 +106,7 @@ export default function Forms() {
               id="phoneNumber"
               ref={phoneNumberRef}
               name="phone"
-              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200"
+              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
             />
           </div>
         </div>
@@ -114,17 +114,16 @@ export default function Forms() {
         {/* Radio Button Group for Service Type */}
         <div
           className="
-          flex flex-col mt-4 p-0 sm:flex 
+          flex flex-col mt-4 p-0 sm:flex
           md:flex-row md:gap-x-28 md:flex-wrap
           lg:flex-row lg:gap-x-28 lg:flex-wrap"
         >
-          <div ref={serviceTypeRef} className="mb-2 mt-4">
-            <label
-              name="service[]"
-              className="block text-gray-700 font-semibold text-sm mb-2"
+          <fieldset ref={serviceTypeRef} className="mb-2 mt-4">
+            <legend
+              className="block text-gray-700 dark:text-gray-200 font-semibold text-sm mb-2"
             >
               What service are you interested in?
-            </label>
+            </legend>
             <div className="flex flex-col gap-2.5 font-light">
               <label className="flex items-center space-x-3">
                 <input
@@ -163,16 +162,15 @@ export default function Forms() {
                 <span>Speech and Language Therapy</span>
               </label>
             </div>
-          </div>
+          </fieldset>
 
           {/* Radio Button Group for Primary Language */}
-          <div ref={primaryLanguageRef} className="mb-2 mt-4">
-            <label
-              name="language[]"
-              className="block text-gray-700 font-semibold text-sm mb-2"
+          <fieldset ref={primaryLanguageRef} className="mb-2 mt-4">
+            <legend
+              className="block text-gray-700 dark:text-gray-200 font-semibold text-sm mb-2"
             >
               What is your child's primary language?
-            </label>
+            </legend>
             <div className="flex flex-col gap-2.5 font-light">
               <label className="flex items-center space-x-3">
                 <input
@@ -211,17 +209,16 @@ export default function Forms() {
                 <span>Other</span>
               </label>
             </div>
-          </div>
+          </fieldset>
 
           {/* Radio Button Group for Child's Age */}
-          <div
-            name="age[]"
+          <fieldset
             ref={childAgeRef}
             className="mt-4 mb-1 md:mb-0 lg:mb-0"
           >
-            <label className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0">
+            <legend className="block text-gray-700 dark:text-gray-200 font-bold mb-1 md:mb-0 lg:mb-0">
               How old is your child?
-            </label>
+            </legend>
             <div className="flex flex-col gap-2.5 font-light">
               <label className="flex items-center space-x-3">
                 <input
@@ -269,14 +266,14 @@ export default function Forms() {
                 <span>Over 6 years old</span>
               </label>
             </div>
-          </div>
+          </fieldset>
         </div>
 
         {/* Textarea for Bio */}
         <div className="mt-6 mb-1 md:m-mb-1 lg:-mb-1">
           <label
             htmlFor="Message:"
-            className="block text-gray-700 font-bold mb-2"
+            className="block text-gray-700 dark:text-gray-200 font-bold mb-2"
           >
             Message:
           </label>
@@ -285,14 +282,14 @@ export default function Forms() {
             ref={bioRef}
             name="message"
             placeholder="Tell us a little bit about the case"
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-200"
+            className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
             rows="4"
           />
         </div>
         <div className="flex flex-col items-center mt-4">
           <button
             type="submit"
-            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-200"
+            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
           >
             Submit
           </button>

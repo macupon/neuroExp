@@ -5,7 +5,7 @@ import { FbIcon } from "./icons/FbIcon"
 export default function Footer() {
   return (
     <>
-        <footer className='bg-violet-100 mt-20'>
+        <footer className='bg-violet-100 dark:bg-gray-900 mt-20'>
                 <div className='flex justify-center container mx-auto p-6'>
                     <LinkIcon/>
                     <IgIcon/>

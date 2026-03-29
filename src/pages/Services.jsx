@@ -19,7 +19,7 @@ export default function Services() {
       {/* Title */}
       <section className="mt-8 flex flex-col md:flex-row gap-3 md:gap-8">
         <div className="relative shrink-0">
-          <div className="absolute -z-10 bg-sky-200 w-12 h-16 md:w-16 md:h-20 lg:w-22 lg:h-26 rounded-sm" />
+          <div className="absolute -z-10 bg-sky-200 dark:bg-sky-900 w-12 h-16 md:w-16 md:h-20 lg:w-22 lg:h-26 rounded-sm" />
           <h1 className="p-3 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight">
             OUR
             <br />
@@ -29,11 +29,11 @@ export default function Services() {
         <div>
           <p className="font-light text-base leading-7">
             On this page you can find all the services offered:{" "}
-            <span className="bg-sky-200 font-medium">
+            <span className="bg-sky-200 dark:bg-sky-900 font-medium">
               Individual Speech and Language Therapy
             </span>{" "}
             and{" "}
-            <span className="bg-sky-200 font-medium">
+            <span className="bg-sky-200 dark:bg-sky-900 font-medium">
               Multidisciplinary Treatment
             </span>{" "}
             in a team with other professionals.
@@ -50,13 +50,13 @@ export default function Services() {
       {/* Speech & Language Services */}
       <section className="mt-12 lg:mt-20">
         <h2 className="font-bold text-2xl md:text-3xl">
-          <span className="bg-sky-200">Speech &amp; Language</span> Services
+          <span className="bg-sky-200 dark:bg-sky-900">Speech &amp; Language</span> Services
         </h2>
         <div className="mt-8 space-y-6">
           {speechServices.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex flex-col md:flex-row gap-6 items-center"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 flex flex-col md:flex-row gap-6 items-center"
             >
               <img
                 src={service.image}
@@ -71,7 +71,8 @@ export default function Services() {
                   {service.price ? (
                     <Link
                       to="/contactus"
-                      className="inline-flex flex-col items-center bg-indigo-200 hover:bg-indigo-300 rounded-full px-5 py-2 text-sm font-semibold transition-colors shrink-0"
+                      aria-label={`${service.price} — contact us about ${service.title}`}
+                      className="inline-flex flex-col items-center bg-indigo-200 hover:bg-indigo-300 dark:bg-indigo-800 dark:hover:bg-indigo-700 rounded-full px-5 py-2 text-sm font-semibold transition-colors shrink-0"
                     >
                       {service.price}
                       <span className="text-xs font-normal">Contact us</span>
@@ -79,6 +80,7 @@ export default function Services() {
                   ) : (
                     <Link
                       to="/contactus"
+                      aria-label={`Contact us about ${service.title}`}
                       className="inline-flex items-center bg-sky-500 hover:bg-sky-600 text-white rounded-full px-5 py-2.5 text-sm font-semibold transition-colors shrink-0"
                     >
                       Contact Us
@@ -91,7 +93,7 @@ export default function Services() {
                     {service.steps.map((step) => (
                       <li
                         key={step.label}
-                        className="font-light text-sm leading-6 text-gray-600"
+                        className="font-light text-sm leading-6 text-gray-600 dark:text-gray-300"
                       >
                         <span className="font-semibold">{step.label}:</span>{" "}
                         {step.text}
@@ -105,7 +107,7 @@ export default function Services() {
                     {service.includes.map((item) => (
                       <li
                         key={item}
-                        className="font-light text-sm leading-6 text-gray-600"
+                        className="font-light text-sm leading-6 text-gray-600 dark:text-gray-300"
                       >
                         {item}
                       </li>
@@ -114,19 +116,19 @@ export default function Services() {
                 )}
 
                 {service.description && (
-                  <p className="font-light text-sm leading-7 mt-3 text-gray-600">
+                  <p className="font-light text-sm leading-7 mt-3 text-gray-600 dark:text-gray-300">
                     {service.description}
                   </p>
                 )}
 
                 {service.cta && (
-                  <p className="font-light text-sm leading-6 mt-2 text-gray-500 italic">
+                  <p className="font-light text-sm leading-6 mt-2 text-gray-500 dark:text-gray-400 italic">
                     {service.cta}
                   </p>
                 )}
 
                 {service.note && (
-                  <p className="font-light text-xs leading-5 mt-3 text-gray-400">
+                  <p className="font-light text-xs leading-5 mt-3 text-gray-400 dark:text-gray-500">
                     {service.note}
                   </p>
                 )}
@@ -139,20 +141,20 @@ export default function Services() {
       {/* Hometraining Program */}
       <section className="mt-12 lg:mt-20">
         <h2 className="font-bold text-2xl md:text-3xl">
-          <span className="bg-sky-200">Hometraining</span> Program
+          <span className="bg-sky-200 dark:bg-sky-900">Hometraining</span> Program
         </h2>
-        <div className="mt-8 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-          <p className="font-light text-sm leading-7 text-gray-600">
+        <div className="mt-8 bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+          <p className="font-light text-sm leading-7 text-gray-600 dark:text-gray-300">
             {homeTrainingText.intro}
           </p>
-          <p className="font-medium text-sm leading-7 mt-3 text-gray-700">
+          <p className="font-medium text-sm leading-7 mt-3 text-gray-700 dark:text-gray-200">
             {homeTrainingText.highlight}
           </p>
           <div className="mt-6">
             <iframe
               src="/HomeTraining.pdf"
               title="Hometraining Program PDF"
-              className="w-full h-96 rounded-lg border border-gray-200"
+              className="w-full h-96 rounded-lg border border-gray-200 dark:border-gray-700"
               loading="lazy"
             />
           </div>
@@ -162,16 +164,16 @@ export default function Services() {
       {/* Collaborations */}
       <section className="mt-12 lg:mt-20">
         <h2 className="font-bold text-2xl md:text-3xl">
-          Our <span className="bg-sky-200">Collaborations</span>
+          Our <span className="bg-sky-200 dark:bg-sky-900">Collaborations</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8">
           {collaborations.map((collab) => (
             <div
               key={collab.name}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6"
             >
               <h3 className="font-semibold text-base">{collab.name}</h3>
-              <p className="font-light text-sm leading-6 mt-1 text-gray-600">
+              <p className="font-light text-sm leading-6 mt-1 text-gray-600 dark:text-gray-300">
                 {collab.contact}
               </p>
               {collab.email && (
@@ -188,6 +190,7 @@ export default function Services() {
                   href={collab.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Visit ${collab.name} website (opens in new tab)`}
                   className="inline-flex items-center gap-1 text-sm text-sky-600 mt-2 hover:underline"
                 >
                   Visit website

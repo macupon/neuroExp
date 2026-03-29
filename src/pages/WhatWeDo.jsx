@@ -16,7 +16,7 @@ export default function WhatWeDo() {
       {/* Intro */}
       <section className="mt-8 flex flex-col md:flex-row gap-3 md:gap-8">
         <div className="relative shrink-0">
-          <div className="absolute -z-10 bg-sky-200 w-12 h-16 md:w-16 md:h-20 lg:w-22 lg:h-26 rounded-sm" />
+          <div className="absolute -z-10 bg-sky-200 dark:bg-sky-900 w-12 h-16 md:w-16 md:h-20 lg:w-22 lg:h-26 rounded-sm" />
           <h1 className="p-3 font-bold text-3xl md:text-4xl lg:text-5xl leading-tight">
             OUR
             <br />
@@ -25,11 +25,11 @@ export default function WhatWeDo() {
         </div>
         <div>
           <p className="font-light text-base leading-7">
-            <span className="bg-sky-200 font-medium text-lg">
+            <span className="bg-sky-200 dark:bg-sky-900 font-medium text-lg">
               Early Stimulation
             </span>{" "}
             or{" "}
-            <span className="bg-sky-200 font-medium text-lg">
+            <span className="bg-sky-200 dark:bg-sky-900 font-medium text-lg">
               Early Intervention
             </span>{" "}
             consists of providing the baby and the child with the best
@@ -49,7 +49,7 @@ export default function WhatWeDo() {
       {/* Diagnosis cards */}
       <section className="mt-12 lg:mt-20">
         <h2 className="font-bold text-2xl md:text-3xl">
-          What types of <span className="bg-sky-200">diagnosis</span> do we
+          What types of <span className="bg-sky-200 dark:bg-sky-900">diagnosis</span> do we
           work with?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
@@ -58,12 +58,12 @@ export default function WhatWeDo() {
             return (
               <div
                 key={cat.title}
-                className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6"
               >
                 <Icon className="w-7 h-7 text-sky-500 mb-3" />
                 <h3 className="font-semibold text-base">{cat.title}</h3>
                 {cat.description && (
-                  <p className="font-light text-sm leading-6 mt-1 text-gray-500">
+                  <p className="font-light text-sm leading-6 mt-1 text-gray-500 dark:text-gray-400">
                     {cat.description}
                   </p>
                 )}
@@ -71,7 +71,7 @@ export default function WhatWeDo() {
                   {cat.items.map((item) => (
                     <li
                       key={item}
-                      className="font-light text-sm leading-6 text-gray-600"
+                      className="font-light text-sm leading-6 text-gray-600 dark:text-gray-300"
                     >
                       {item}
                     </li>
