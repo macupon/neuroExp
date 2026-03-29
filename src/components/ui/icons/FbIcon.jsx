@@ -2,7 +2,7 @@
 export const FbIcon =()=> {
   return (
     <>
-      <a href="https://www.facebook.com/people/NeuroExp/100063963403620/">
+      <a href="https://www.facebook.com/people/NeuroExp/100063963403620/" aria-label="Facebook">
         <svg xmlns="http://www.w3.org/2000/svg" 
         width="24" 
         height="24" 

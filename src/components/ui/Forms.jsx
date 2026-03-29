@@ -2,8 +2,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-undef */
 import { useRef } from "react";
-// import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export default function Forms() {
   const userNameRef = useRef();
@@ -54,20 +52,20 @@ export default function Forms() {
   return (
     <div>
       <form
-        className="max-w-screen mx-auto px-6 md:px-10 lg:px-10 pt-5 pb-5 bg-white/10 shadow-md rounded"
+        className="max-w-screen mx-auto px-6 md:px-10 lg:px-10 py-6"
         method="post"
         name="contact v1"
         // data-netlify="true"
         onSubmit={handleSubmit}
         action="/"
       >
-        <h2 className="mt-0 mb-4 text-2xl">Contact form</h2>
+        <h2 className="font-bold text-xl md:text-2xl mb-6">Contact form</h2>
         <input type="hidden" name="form-name" value="contact v1" />
-        <div className="sm:flex gap-x-5 flex-wrap">
-          <div className="mb-4 min-w-[10rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div>
             <label
               htmlFor="userName"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-semibold text-sm mb-2"
             >
               Full Name
             </label>
@@ -76,14 +74,14 @@ export default function Forms() {
               id="userName"
               name="name"
               ref={userNameRef}
-              className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline mr-24"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200"
             />
           </div>
 
-          <div className="mb-4 min-w-[8rem] max-w-[30rem]">
+          <div>
             <label
               htmlFor="email"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-semibold text-sm mb-2"
             >
               Email
             </label>
@@ -92,14 +90,14 @@ export default function Forms() {
               id="email"
               ref={emailRef}
               name="email"
-              className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200"
             />
           </div>
 
-          <div className="mb-4 min-w-[10rem] max-w-[50rem]">
+          <div>
             <label
               htmlFor="phoneNumber"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-semibold text-sm mb-2"
             >
               Phone Number
             </label>
@@ -108,7 +106,7 @@ export default function Forms() {
               id="phoneNumber"
               ref={phoneNumberRef}
               name="phone"
-              className="w-full lg:w-full px-3 py-2 border rounded shadow focus:outline-none focus:shadow-outline"
+              className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200"
             />
           </div>
         </div>
@@ -123,11 +121,11 @@ export default function Forms() {
           <div ref={serviceTypeRef} className="mb-2 mt-4">
             <label
               name="service[]"
-              className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0"
+              className="block text-gray-700 font-semibold text-sm mb-2"
             >
               What service are you interested in?
             </label>
-            <div className="flex flex-col gap-2 md:gap-0 lg:gap-0 font-light">
+            <div className="flex flex-col gap-2.5 font-light">
               <label className="flex items-center space-x-3">
                 <input
                   type="radio"
@@ -171,11 +169,11 @@ export default function Forms() {
           <div ref={primaryLanguageRef} className="mb-2 mt-4">
             <label
               name="language[]"
-              className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0"
+              className="block text-gray-700 font-semibold text-sm mb-2"
             >
               What is your child's primary language?
             </label>
-            <div className="flex flex-col gap-2 md:gap-0 lg:gap-0 font-light">
+            <div className="flex flex-col gap-2.5 font-light">
               <label className="flex items-center space-x-3">
                 <input
                   type="radio"
@@ -224,7 +222,7 @@ export default function Forms() {
             <label className="block text-gray-700 font-bold mb-1 md:mb-0 lg:mb-0">
               How old is your child?
             </label>
-            <div className="flex flex-col gap-2 md:gap-0 lg:gap-0 font-light">
+            <div className="flex flex-col gap-2.5 font-light">
               <label className="flex items-center space-x-3">
                 <input
                   type="radio"
@@ -287,14 +285,14 @@ export default function Forms() {
             ref={bioRef}
             name="message"
             placeholder="Tell us a little bit about the case"
-            className="w-full px-3 py-2 border rounded shadow resize-none focus:outline-none focus:shadow-outline"
+            className="w-full px-3 py-2 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-200"
             rows="4"
           />
         </div>
         <div className="flex flex-col items-center mt-4">
           <button
             type="submit"
-            className="bg-sky-500 text-white font-bold py-2 px-4 rounded hover:bg-sky-700 focus:outline-none focus:shadow-outline"
+            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-200"
           >
             Submit
           </button>

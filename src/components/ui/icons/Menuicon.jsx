@@ -3,6 +3,8 @@ export const MenuIcon = ({ handleClick }) => {
   return (
     <>
       <svg
+        aria-label="Open menu"
+        role="button"
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"

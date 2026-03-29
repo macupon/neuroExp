@@ -4,7 +4,7 @@
 // import speechtep from "../../public/cover2_files/speechtep.webp";
 // import babydough from "../../public/cover2_files/babydough.webp";
 // import speechterap from "../../public/cover2_files/speechterap.webp";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export default function WhatWeOffer() {
   const navigate = useNavigate();
