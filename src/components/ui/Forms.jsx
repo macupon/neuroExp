@@ -1,6 +1,4 @@
-/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-undef */
 import { useRef } from "react";
 
 export default function Forms() {
