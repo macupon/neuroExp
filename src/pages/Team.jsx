@@ -5,7 +5,7 @@ import {
   Heart,
   ExternalLink,
 } from "lucide-react";
-import { florencia, teamMembers, collaborators } from "../text/aboutUsText";
+import { florencia, teamMembers, collaborators } from "../text/TeamText";
 
 const iconMap = {
   GraduationCap,
@@ -14,7 +14,9 @@ const iconMap = {
   Heart,
 };
 
-export default function AboutUs() {
+export default function Team() {
+  const hasTeamMembers = teamMembers.length > 0;
+
   return (
     <div className="py-8">
       {/* Florencia intro */}
@@ -25,9 +27,12 @@ export default function AboutUs() {
           className="w-40 h-40 md:w-52 md:h-52 rounded-full object-cover shrink-0"
         />
         <div>
-          <h1 className="bg-sky-200 dark:bg-sky-900 inline font-bold text-3xl md:text-4xl lg:text-5xl">
-            Hello everyone!
-          </h1>
+          <div className="heading-h1-wrap">
+            <div className="heading-h1-accent" />
+            <h1 className="heading-h1">
+              Hello everyone!
+            </h1>
+          </div>
           <p className="mt-4 font-light text-base leading-7">
             I&apos;m{" "}
             <span className="font-semibold text-lg text-cyan-600 dark:text-cyan-400">
@@ -40,21 +45,21 @@ export default function AboutUs() {
 
       {/* Florencia highlight cards */}
       <section className="mt-10">
-        <h2 className="font-bold text-2xl md:text-3xl text-gray-800 dark:text-gray-100">
+        <h2 className="heading-h2">
           {florencia.name}
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 mt-1">{florencia.role}</p>
+        <h3 className="heading-h3">{florencia.role}</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
           {florencia.highlights.map((h) => {
             const Icon = iconMap[h.icon];
             return (
               <div
                 key={h.title}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-5"
+                className="card-style p-5"
               >
-                <Icon className="w-6 h-6 text-sky-500 mb-3" />
-                <h3 className="font-semibold text-sm">{h.title}</h3>
-                <p className="font-light text-sm leading-6 mt-2 text-gray-600 dark:text-gray-300">
+                <Icon className="w-6 h-6 text-content-icon mb-3" />
+                <h3 className="card-title">{h.title}</h3>
+                <p className="card-text">
                   {h.text}
                 </p>
                 {h.link && (
@@ -95,48 +100,46 @@ export default function AboutUs() {
       </section>
 
       {/* Team members */}
-      <section className="mt-12">
-        <h2 className="bg-sky-200 dark:bg-sky-900 inline font-bold text-2xl md:text-3xl">
-          Our team
-        </h2>
-        <div className="mt-6 flex flex-col gap-6">
-          {teamMembers.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 flex flex-col md:flex-row gap-10 items-center"
-            >
-              <div className="flex flex-col items-center shrink-0">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full object-cover"
-                />
-                <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100 mt-3">
-                  {member.name}
-                </h3>
-                <p className="text-gray-500 dark:text-gray-400 text-sm">{member.role}</p>
+      {hasTeamMembers && (
+        <section className="mt-12">
+          <h2 className="heading-h2">Our team</h2>
+          <div className="mt-6 flex flex-col gap-6">
+            {teamMembers.map((member) => (
+              <div
+                key={member.name}
+                className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-6 flex flex-col md:flex-row gap-10 items-center"
+              >
+                <div className="flex flex-col items-center shrink-0">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-32 h-32 rounded-full object-cover"
+                  />
+                  <h3 className="card-title mt-3">
+                    {member.name}
+                  </h3>
+                  <p className="card-meta">{member.role}</p>
+                </div>
+                <div>
+                  {member.bio.map((paragraph, i) => (
+                    <p
+                      key={i}
+                      className="font-light text-sm leading-7 mt-3 text-gray-600 dark:text-gray-300"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
               </div>
-              <div>
-                {member.bio.map((paragraph, i) => (
-                  <p
-                    key={i}
-                    className="font-light text-sm leading-7 mt-3 text-gray-600 dark:text-gray-300"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Collaborators */}
       <section className="mt-12">
-        <h2 className="bg-sky-200 dark:bg-sky-900 inline font-bold text-2xl md:text-3xl">
-          Collaborations
-        </h2>
-        <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm">
+        <h2 className="heading-h2">Collaborations</h2>
+        <p className="mt-3 text-gray-600 dark:text-gray-500 text-sm">
           We collaborate with different professionals through the Hometraining
           Program.
         </p>
@@ -151,10 +154,10 @@ export default function AboutUs() {
                 alt={collab.name}
                 className="w-28 h-28 rounded-full object-cover"
               />
-              <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100 mt-4">
+              <h3 className="card-title text-lg mt-4">
                 {collab.name}
               </h3>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">{collab.role}</p>
+              <p className="card-meta">{collab.role}</p>
               <p className="font-light text-sm leading-6 mt-3 text-gray-600 dark:text-gray-300">
                 {collab.description}
               </p>

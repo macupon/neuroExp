@@ -9,7 +9,7 @@ const iconMap = {
   MessageCircle: MessageCircle,
 };
 
-export const IndexExp = () => {
+export const Home = () => {
   return (
     <>
       {/* Hero */}
@@ -25,7 +25,7 @@ export const IndexExp = () => {
         <h1 className="text-purple font-bold text-2xl md:text-4xl lg:text-5xl mt-6 text-center">
           {heroText.title}
         </h1>
-        <p className="text-gray-600 dark:text-gray-300 text-center mt-3 max-w-xl text-sm md:text-base">
+        <p className="text-gray-600 dark:text-gray-500 dark:font-medium text-center mt-3 max-w-xl text-sm md:text-base">
           {heroText.tagline}
         </p>
         <Link
@@ -51,9 +51,9 @@ export const IndexExp = () => {
             return (
               <div
                 key={pillar.key}
-                className="bg-white/50 dark:bg-gray-800/50 p-8 rounded-xl shadow-xl text-center"
+                className="bg-white/50 dark:bg-gray-500/50 p-8 rounded-xl shadow-xl text-center"
               >
-                <Icon className="w-8 h-8 text-sky-500 mx-auto mb-4" />
+                <Icon className="w-8 h-8 text-content-icon mx-auto mb-4" />
                 <h3 className="text-md font-bold">{pillar.title}</h3>
                 <p className="font-light text-sm leading-7 mt-3">
                   {pillar.description}
@@ -81,7 +81,7 @@ export const IndexExp = () => {
                 alt={service.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
               <div className="relative h-full flex flex-col justify-end p-6 text-white">
                 <h3 className="font-bold text-lg">
                   {service.title}
@@ -104,14 +104,14 @@ export const IndexExp = () => {
           {testimonials.map((t) => (
             <div
               key={t.attribution}
-              className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 p-5 break-inside-avoid"
+              className="card-style"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <cite className="block font-semibold text-purple text-sm not-italic">
+                  <cite className="block font-semibold text-purple dark:text-gray-50 text-sm not-italic">
                     {t.attribution}
                   </cite>
-                  <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
+                   <p className="text-xs text-gray-400 dark:text-gray-300 mt-0.5">
                     {t.heading}
                   </p>
                 </div>
@@ -120,7 +120,7 @@ export const IndexExp = () => {
                     <Star
                       key={i}
                       aria-hidden="true"
-                      className="w-3 h-3 text-sky-500 fill-sky-500"
+                        className="w-3 h-3 text-content-icon fill-content-icon"
                     />
                   ))}
                 </div>
@@ -135,7 +135,7 @@ export const IndexExp = () => {
 
       {/* Map */}
       <section aria-label="Location" className="pb-8">
-        <div className="bg-white/50 dark:bg-gray-800/50 rounded-xl shadow-md">
+        <div className="bg-white/50 dark:bg-gray-500/50 rounded-xl shadow-md">
           <Map />
         </div>
       </section>

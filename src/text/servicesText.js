@@ -3,7 +3,7 @@ export const speechServices = [
     title: "Neurodevelopmental evaluation",
     image: "/cover2_files/babybear.webp",
     price: "1800 Dkk",
-    steps: [
+    steps: [  // numbered items
       {
         label: "Admission interview",
         text: "You will get a questionnaire on the child's neurodevelopment to be completed. If needed, I'll be able to deepen specific aspects that are of interest for the diagnosis.",
@@ -19,7 +19,7 @@ export const speechServices = [
     title: "Speech and Language Evaluation",
     image: "/cover2_files/babydough.webp",
     price: "1800 Dkk",
-    steps: [
+    steps: [  // numbered items
       {
         label: "Admission interview",
         text: "You will be given a questionnaire about the child's speech and language development to be completed.",
@@ -35,7 +35,7 @@ export const speechServices = [
     title: "Initial Consultation",
     image: "/cover2_files/speechtep.webp",
     price: "1200 Dkk",
-    includes: [
+    includes: [ // non-numbered items
       "Initial phone call for 20 minutes: where the case is superficially disclosed.",
       "Language development and general development questionnaire to be completed by parents.",
       "One hour face-to-face session where the professional will evaluate the child's communication, language and learning skills.",

@@ -45,15 +45,15 @@ export const florencia = {
 };
 
 export const teamMembers = [
-  {
-    name: "Xafsa Said",
-    role: "Speech and Language Assistant",
-    image: "/xafsaImg.jpeg.webp",
-    bio: [
-      "My name is Xafsa Said and I'm 25 years old. I'm from Odense and currently live in Herlev. Originally I'm from Somalia and therefore I speak Somali, Danish, and English fluently. I'm currently pursuing my Master's degree in Audiologopaedi at the University of Copenhagen and will finish in December 2024.",
-      "I am deeply passionate about working with children who face challenges in speech, language, and/or communication. With approximately one year of practical experience from PPR in Kolding, I have had the opportunity to work directly with this specific demographic. Additionally, I have had the privilege of collaborating under the supervision of a recognized expert in the field of autism, Cecilia Brynskov. In this capacity, I have contributed to the linguistic development and communication skills of a 5-year-old boy with autism. I'm inspired by Mindsteps and am thrilled to be part of the NeuroExp team.",
-    ],
-  },
+  // {
+  //   name: "Xafsa Said",
+  //   role: "Speech and Language Assistant",
+  //   image: "/xafsaImg.jpeg.webp",
+  //   bio: [
+  //     "My name is Xafsa Said and I'm 25 years old. I'm from Odense and currently live in Herlev. Originally I'm from Somalia and therefore I speak Somali, Danish, and English fluently. I'm currently pursuing my Master's degree in Audiologopaedi at the University of Copenhagen and will finish in December 2024.",
+  //     "I am deeply passionate about working with children who face challenges in speech, language, and/or communication. With approximately one year of practical experience from PPR in Kolding, I have had the opportunity to work directly with this specific demographic. Additionally, I have had the privilege of collaborating under the supervision of a recognized expert in the field of autism, Cecilia Brynskov. In this capacity, I have contributed to the linguistic development and communication skills of a 5-year-old boy with autism. I'm inspired by Mindsteps and am thrilled to be part of the NeuroExp team.",
+  //   ],
+  // },
 ];
 
 export const collaborators = [

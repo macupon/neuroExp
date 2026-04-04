@@ -59,7 +59,7 @@ export default function Forms() {
         onSubmit={handleSubmit}
         action="/"
       >
-        <h2 className="font-bold text-xl md:text-2xl mb-6">Contact form</h2>
+        <h2 className="card-title text-xl md:text-2xl mb-6">Contact form</h2>
         <input type="hidden" name="form-name" value="contact v1" />
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           <div>
@@ -74,7 +74,7 @@ export default function Forms() {
               id="userName"
               name="name"
               ref={userNameRef}
-              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
+              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-400"
             />
           </div>
 
@@ -90,7 +90,7 @@ export default function Forms() {
               id="email"
               ref={emailRef}
               name="email"
-              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
+              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-400"
             />
           </div>
 
@@ -106,7 +106,7 @@ export default function Forms() {
               id="phoneNumber"
               ref={phoneNumberRef}
               name="phone"
-              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
+              className="w-full px-3 py-2 border border-gray-200 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-400"
             />
           </div>
         </div>
@@ -132,16 +132,16 @@ export default function Forms() {
                   value="NE"
                   className="form-radio"
                 />
-                <span>Neurodevelopment Evaluation</span>
+                <span className="text-gray-700 dark:text-gray-200">Neurodevelopment Evaluation</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
                   type="radio"
                   name="serviceType"
                   value="SLE"
-                  className="form-radio"
+                  className="form-radio "
                 />
-                <span>Speech and Language Evaluation</span>
+                <span className="text-gray-700 dark:text-gray-200">Speech and Language Evaluation</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -150,7 +150,7 @@ export default function Forms() {
                   value="IC"
                   className="form-radio"
                 />
-                <span>Initial Consultation</span>
+                <span className="text-gray-700 dark:text-gray-200">Initial Consultation</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -159,7 +159,7 @@ export default function Forms() {
                   value="SLT"
                   className="form-radio"
                 />
-                <span>Speech and Language Therapy</span>
+                <span className="text-gray-700 dark:text-gray-200">Speech and Language Therapy</span>
               </label>
             </div>
           </fieldset>
@@ -179,7 +179,7 @@ export default function Forms() {
                   value="SP"
                   className="form-radio"
                 />
-                <span>Spanish</span>
+                <span className="text-gray-700 dark:text-gray-200">Spanish</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -188,7 +188,7 @@ export default function Forms() {
                   value="EN"
                   className="form-radio"
                 />
-                <span>English</span>
+                <span className="text-gray-700 dark:text-gray-200">English</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -197,7 +197,7 @@ export default function Forms() {
                   value="DS"
                   className="form-radio"
                 />
-                <span>Danish</span>
+                <span className="text-gray-700 dark:text-gray-200">Danish</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -206,7 +206,7 @@ export default function Forms() {
                   value="OTHER"
                   className="form-radio"
                 />
-                <span>Other</span>
+                <span className="text-gray-700 dark:text-gray-200">Other</span>
               </label>
             </div>
           </fieldset>
@@ -227,7 +227,7 @@ export default function Forms() {
                   value="0-12"
                   className="form-radio"
                 />
-                <span>0 - 12 months</span>
+                <span className="text-gray-700 dark:text-gray-200">0 - 12 months</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -236,7 +236,7 @@ export default function Forms() {
                   value="12-24"
                   className="form-radio"
                 />
-                <span>12 - 24 months</span>
+                <span className="text-gray-700 dark:text-gray-200">12 - 24 months</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -245,7 +245,7 @@ export default function Forms() {
                   value="2-3"
                   className="form-radio"
                 />
-                <span>2 - 3 years old</span>
+                <span className="text-gray-700 dark:text-gray-200">2 - 3 years old</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -254,7 +254,7 @@ export default function Forms() {
                   value="4-5"
                   className="form-radio"
                 />
-                <span>4 - 5 years old</span>
+                <span className="text-gray-700 dark:text-gray-200">4 - 5 years old</span>
               </label>
               <label className="flex items-center space-x-3">
                 <input
@@ -263,7 +263,7 @@ export default function Forms() {
                   value="OVER6"
                   className="form-radio"
                 />
-                <span>Over 6 years old</span>
+                <span className="text-gray-700 dark:text-gray-200">Over 6 years old</span>
               </label>
             </div>
           </fieldset>
@@ -282,14 +282,14 @@ export default function Forms() {
             ref={bioRef}
             name="message"
             placeholder="Tell us a little bit about the case"
-            className="w-full px-3 py-2 border border-gray-200 dark:border-gray-600 dark:bg-gray-700 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
+            className="placeholder:italic w-full px-3 py-2 border border-gray-200 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-100 dark:placeholder:text-gray-400 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-400"
             rows="4"
           />
         </div>
         <div className="flex flex-col items-center mt-4">
           <button
             type="submit"
-            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-700"
+            className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full px-6 py-3 transition-colors focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-400"
           >
             Submit
           </button>

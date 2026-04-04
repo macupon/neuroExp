@@ -7,8 +7,8 @@ import { useState, useEffect, useRef } from "react";
 
 const linkClass = ({ isActive }) =>
   isActive
-    ? "text-purple font-semibold border-b-2 border-sky-200"
-    : "hover:text-gray-500 dark:hover:text-gray-300";
+    ? "text-purple dark:text-gray-50 font-semibold border-b-2 border-sky-200"
+    : "text-gray-800 dark:text-gray-100 hover:text-gray-500 dark:hover:text-gray-300";
 
 export const Navbar = () => {
   const [menuOn, setMenuOn] = useState(false);
@@ -32,17 +32,17 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-violet-100 dark:bg-gray-900 md:sticky md:top-0 z-50">
+    <header className="bg-violet-100 dark:bg-gray-900 dark:text-gray-100 md:sticky md:top-0 z-50">
       <nav className="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20">
         <div>
           <img src="/nav-logo.png" alt="NeuroExp logo" className="w-10" />
         </div>
         <div
-          className={
-            menuOn
+              className={
+                menuOn
               ? "flex absolute z-50 bg-white dark:bg-gray-900 shadow-lg px-6 py-8 left-0 top-20 w-full md:bg-violet-100 md:dark:bg-gray-900 md:shadow-none md:static md:py-0 md:w-auto"
-              : "hidden md:flex md:static md:w-auto"
-          }
+               : "hidden md:flex md:static md:w-auto"
+           }
           ref={menuRef}
         >
           <ul className="flex flex-col md:items-center md:flex-row gap-8 md:gap-[4vw] md:bg-violet-100 md:dark:bg-gray-900">
@@ -88,7 +88,7 @@ export const Navbar = () => {
             <button
               onClick={toggleMenu}
               aria-label="Toggle navigation menu"
-              className="focus:outline-none"
+              className="rounded-md focus:outline-none focus:ring-2 focus:ring-sky-200 dark:focus:ring-sky-400"
             >
               <MenuIcon />
             </button>
