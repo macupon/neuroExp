@@ -14,14 +14,9 @@ export default function ContactUs() {
       {/* Title */}
       <section className="mt-8">
         <h1 className="heading-h1 p-0">CONTACT US</h1>
-        <div className="mt-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 rounded-2xl p-5">
-          <p className="text-red-600 dark:text-red-500 font-medium text-sm md:text-base leading-6">
-            Unfortunately we <u>do not have space available for new cases</u> at
-            this time. We invite you to join our <u>waiting list</u> where we
-            will inform you when we will have new appointments. We apologize for
-            any inconvenience caused and thank you for your interest and trust!
-          </p>
-        </div>
+        <p className="font-light text-base leading-7 md:pt-3">
+          We are currently accepting new cases. Please complete and submit the form below, and a member of our team will contact you shortly. Thank you for your interest and trust.
+        </p>
       </section>
 
       {/* Form */}
